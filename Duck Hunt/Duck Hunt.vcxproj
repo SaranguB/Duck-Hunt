@@ -104,10 +104,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\Outscal\C++\Self\Duck-Hunt\Duck Hunt\sfml\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\Outscal\C++\Self\Duck-Hunt\Duck Hunt\sfml\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-network-d.lib;sfml-audio-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,7 +130,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Global\Config.cpp" />
+    <ClCompile Include="Source\Graphics\GraphicService.cpp" />
+    <ClCompile Include="Source\Main\GameService.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Source\Global\ServiceLocator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header\Global\Config.h" />
+    <ClInclude Include="Header\Global\ServiceLocator.h" />
+    <ClInclude Include="Header\Graphics\GraphicService.h" />
+    <ClInclude Include="Header\Main\GameService.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
