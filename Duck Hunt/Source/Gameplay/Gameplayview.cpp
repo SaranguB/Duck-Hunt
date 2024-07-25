@@ -20,10 +20,11 @@ namespace Gameplay
 
 	void GameplayView::Initialize()
 	{
+
 		gameWindow = ServiceLocator::GetInstance()->GetGraphicService()->GetGameWIndow();
 		gameplayImage->Initialize(Config::Duck_Hunt_BG_Texture_Path,
 			gameWindow->getSize().x, gameWindow->getSize().y, sf::Vector2f(0,0));
-
+	
 	}
 
 	void GameplayView::Update()

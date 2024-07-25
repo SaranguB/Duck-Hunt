@@ -18,7 +18,7 @@ namespace UI
 
 		void ImageView::Initialize(sf::String texturePath, float imageWidth, float imageHeight, sf::Vector2f position)
 		{
-
+			gameWindow = ServiceLocator::GetInstance()->GetGraphicService()->GetGameWIndow();
 			SetTexture(texturePath);
 			SetScale(imageWidth, imageHeight);
 
@@ -50,7 +50,6 @@ namespace UI
 
 		void ImageView::Render()
 		{
-			gameWindow = ServiceLocator::GetInstance()->GetGraphicService()->GetGameWIndow();
 			gameWindow->draw(imageSprite);
 
 		}
