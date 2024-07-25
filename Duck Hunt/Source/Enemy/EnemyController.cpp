@@ -32,4 +32,10 @@ namespace Enemy
 	{
 		enemyView->Render();
 	}
+
+	sf::Vector2f EnemyController::GetEnemyPosition()
+	{
+		return enemyModel->GetEnemyPosition();;
+	}
+	
 }

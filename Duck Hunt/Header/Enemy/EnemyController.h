@@ -1,4 +1,5 @@
 #pragma once
+#include <SFML/System/Vector2.hpp>
 
 namespace Enemy
 {
@@ -19,5 +20,7 @@ namespace Enemy
 		void Initialize();
 		void Update();
 		void Render();
+
+		sf::Vector2f GetEnemyPosition();
 	};
 }
