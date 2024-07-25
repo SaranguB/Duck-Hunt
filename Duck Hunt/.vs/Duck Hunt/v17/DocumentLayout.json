@@ -67,8 +67,7 @@
               "RelativeToolTip": "Source\\Gameplay\\GameplayController.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-25T10:20:43.638Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-25T10:20:43.638Z"
             },
             {
               "$type": "Document",
@@ -80,8 +79,7 @@
               "RelativeToolTip": "Source\\Gameplay\\GameplayService.cpp",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-25T10:20:32.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-25T10:20:32.323Z"
             },
             {
               "$type": "Document",
@@ -93,8 +91,7 @@
               "RelativeToolTip": "Main.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-25T10:15:02.917Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-25T10:15:02.917Z"
             },
             {
               "$type": "Document",
@@ -106,8 +103,7 @@
               "RelativeToolTip": "Header\\Graphics\\GraphicService.h",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAACgAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-25T09:56:56.206Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-25T09:56:56.206Z"
             },
             {
               "$type": "Document",
@@ -119,8 +115,7 @@
               "RelativeToolTip": "Source\\Global\\ServiceLocator.cpp",
               "ViewState": "AQIAACEAAAAAAAAAAAAAAB8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-25T09:52:31.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-25T09:52:31.203Z"
             },
             {
               "$type": "Document",
@@ -132,8 +127,7 @@
               "RelativeToolTip": "Source\\UI\\UIElement\\ImageView.cpp",
               "ViewState": "AQIAACcAAAAAAAAAAAAAADcAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-25T09:22:30.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-25T09:22:30.738Z"
             },
             {
               "$type": "Document",
@@ -145,8 +139,7 @@
               "RelativeToolTip": "Source\\Main\\GameService.cpp",
               "ViewState": "AQIAACQAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-25T10:10:13.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-25T10:10:13.929Z"
             }
           ]
         }
