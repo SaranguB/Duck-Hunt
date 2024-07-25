@@ -43,7 +43,6 @@ namespace Main
 	{
 		gameWindow->clear(serviceLocator->GetGraphicService()->GetWindowColor());
 		serviceLocator->Render();
-		gameWindow->draw(serviceLocator->GetGraphicService()->GetImageSprite());
 		gameWindow->display();
 	}
 	bool GameService::IsRunning()

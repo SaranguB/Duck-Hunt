@@ -131,6 +131,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\Event\EventService.cpp" />
+    <ClCompile Include="Source\Gameplay\GameplayController.cpp" />
+    <ClCompile Include="Source\Gameplay\GameplayService.cpp" />
+    <ClCompile Include="Source\Gameplay\Gameplayview.cpp" />
     <ClCompile Include="Source\Global\Config.cpp" />
     <ClCompile Include="Source\Graphics\GraphicService.cpp" />
     <ClCompile Include="Source\Main\GameService.cpp" />
@@ -140,6 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Event\EventService.h" />
+    <ClInclude Include="Header\Gameplay\GameplayController.h" />
+    <ClInclude Include="Header\Gameplay\GameplayService.h" />
+    <ClInclude Include="Header\Gameplay\GameplayView.h" />
     <ClInclude Include="Header\Global\Config.h" />
     <ClInclude Include="Header\Global\ServiceLocator.h" />
     <ClInclude Include="Header\Graphics\GraphicService.h" />
