@@ -1,8 +1,15 @@
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
 # Prerequisites
 *.d
 
 # Compiled Object files
-*.suo
+
 *.slo
 *.lo
 *.o
