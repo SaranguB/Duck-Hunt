@@ -11,11 +11,13 @@ namespace UI
 
 			sf::RenderWindow* gameWindow;
 
-			sf::Sprite imageTexture;
+			sf::Texture imageTexture;
 			sf::Sprite imageSprite;
 
 			float imageWidth;
 			float imagwHeight;
+
+			
 
 		public:
 			ImageView();
@@ -25,8 +27,8 @@ namespace UI
 			void Update();
 			void Render();
 
-			void SetTexture();
-
+			void SetTexture(sf::String texturePath);
+			void SetScale(float imageWidth, float imageHeight);
 
 
 		};

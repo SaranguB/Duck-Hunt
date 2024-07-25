@@ -1,4 +1,7 @@
 D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Event\EventService.cpp;D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Duck Hunt\x64\Debug\EventService.obj
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\GameplayController.cpp;D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Duck Hunt\x64\Debug\GameplayController.obj
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\GameplayService.cpp;D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Duck Hunt\x64\Debug\GameplayService.obj
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp;D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Duck Hunt\x64\Debug\Gameplayview.obj
 D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Global\Config.cpp;D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Duck Hunt\x64\Debug\Config.obj
 D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Graphics\GraphicService.cpp;D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Duck Hunt\x64\Debug\GraphicService.obj
 D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Main\GameService.cpp;D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Duck Hunt\x64\Debug\GameService.obj

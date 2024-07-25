@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "../../Header/Graphics/GraphicService.h"
 #include "../../Header/Event/EventService.h"
+#include "../../Header/Gameplay/GameplayService.h"
 
 namespace Global
 {
@@ -11,6 +12,7 @@ namespace Global
 
 		Graphics::GraphicService* graphicService;
 		Event::EventService* eventService;
+		Gameplay::GameplayService* gameplayService;
 
 		ServiceLocator();
 		~ServiceLocator();
@@ -29,5 +31,6 @@ namespace Global
 
 		Graphics::GraphicService* GetGraphicService();
 		Event::EventService* GetEventService();
+		Gameplay::GameplayService* GetGameplayService();
 	};
 }

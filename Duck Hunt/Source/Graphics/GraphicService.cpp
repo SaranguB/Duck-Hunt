@@ -19,7 +19,7 @@ namespace Graphics
 	void GraphicService::Initialize()
 	{
 		gameWindow = CreateGameWindow();
-		SetImageTexture();
+		
 		gameWindow->setFramerateLimit(frameRate);
 	}
 
@@ -64,27 +64,5 @@ namespace Graphics
 		return gameWindowColor;
 	}
 
-	void GraphicService::SetImageTexture()
-	{
-		if (bgTexture.loadFromFile(Global::Config::Duck_Hunt_BG_Texture_Path))
-		{
-			bgSprite.setTexture(bgTexture);
-			SetScale();
-			
-		}
-	}
-
-	sf::Sprite GraphicService::GetImageSprite()
-	{
-		return bgSprite;
-	}
-
-	void GraphicService::SetScale()
-	{
-		float scaleX = gameWindowWidth / static_cast<float> (bgSprite.getTexture()->getSize().x);
-		float scaleY = gameWindowHeight / static_cast<float> (bgSprite.getTexture()->getSize().y);
-
-		bgSprite.setScale(scaleX, scaleY);
-	}
 
 }
