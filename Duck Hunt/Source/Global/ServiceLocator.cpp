@@ -3,6 +3,7 @@
 namespace Global
 {
 	using namespace Graphics;
+	using namespace Event;
 
 	ServiceLocator::ServiceLocator()
 	{
@@ -17,6 +18,7 @@ namespace Global
 	void ServiceLocator::CreateServices()
 	{
 		graphicService = new GraphicService();
+		eventService = new EventService();
 	}
 
 	void ServiceLocator::ClearAllServices()
@@ -33,9 +35,11 @@ namespace Global
 	void ServiceLocator::Initialize()
 	{
 		graphicService->Initialize();
+		eventService->Initialize();
 	}
 	void ServiceLocator::Update()
 	{
+		eventService->Update();
 
 	}
 	void ServiceLocator::Render()
@@ -45,5 +49,9 @@ namespace Global
 	Graphics::GraphicService* ServiceLocator::GetGraphicService()
 	{
 		return graphicService;
+	}
+	Event::EventService* ServiceLocator::GetEventService()
+	{
+		return eventService;
 	}
 }
