@@ -37,6 +37,7 @@ namespace Main
 	void GameService::Update()
 	{
 		serviceLocator->Update();
+		serviceLocator->GetEventService()->ProcessEvent();
 	}
 	void GameService::Render()
 	{
