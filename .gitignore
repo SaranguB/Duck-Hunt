@@ -49,3 +49,6 @@ Duck Hunt/.vs/Duck Hunt/v17/.suo
 
 # Others
 *x64/
+*.db
+Duck Hunt/.vs/Duck Hunt/v17/.suo
+*.json

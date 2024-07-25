@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\UI\\UIElement\\ImageView.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|solutionrelative:Source\\UI\\UIElement\\ImageView.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Gameplay\\Gameplayview.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|solutionrelative:Source\\Gameplay\\Gameplayview.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Gameplay\\GameplayController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|solutionrelative:Source\\Gameplay\\GameplayController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\UI\\UIElement\\ImageView.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|solutionrelative:Source\\UI\\UIElement\\ImageView.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Global\\ServiceLocator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -42,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Gameplayview.cpp",
               "DocumentMoniker": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Gameplay\\Gameplayview.cpp",
               "RelativeDocumentMoniker": "Source\\Gameplay\\Gameplayview.cpp",
@@ -59,7 +59,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "GameplayController.cpp",
               "DocumentMoniker": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Gameplay\\GameplayController.cpp",
               "RelativeDocumentMoniker": "Source\\Gameplay\\GameplayController.cpp",
@@ -124,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ImageView.cpp",
               "DocumentMoniker": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\UI\\UIElement\\ImageView.cpp",
               "RelativeDocumentMoniker": "Source\\UI\\UIElement\\ImageView.cpp",
