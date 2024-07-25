@@ -1,15 +1,7 @@
-# User-specific files
-*.rsuser
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
 # Prerequisites
 *.d
 
 # Compiled Object files
-
 *.slo
 *.lo
 *.o
@@ -39,14 +31,6 @@
 *.out
 *.app
 
-# Visual Studio directory
-.vs/
-Duck Hunt/.vs/Duck Hunt/v17/.suo
-Duck Hunt/.vs/Duck Hunt/v17/DocumentLayout.json
-Duck Hunt/.vs/Duck Hunt/v17/DocumentLayout.json
-Duck Hunt/.vs/Duck Hunt/v17/.suo
-Duck Hunt/.vs/Duck Hunt/v17/.suo
-
 # Others
+*.vs/
 *x64/
-*.json
