@@ -18,8 +18,8 @@ namespace Enemy
 		EnemyView();
 		~EnemyView();
 		
-		const float enemySpriteHeight = 60.f;
-		const float enemySpriteWidth = 60.f;
+		const float enemySpriteHeight = 150.f;
+		const float enemySpriteWidth = 150.f;
 
 		void InitializeEnemySprite();
 
