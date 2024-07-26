@@ -1,4 +1,25 @@
-﻿  ServiceLocator.cpp
+﻿  Main.cpp
+  EnemyController.cpp
+  EnemyModel.cpp
+  EnemyService.cpp
+  EnemyView.cpp
+  EventService.cpp
+  Gameplayview.cpp
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(26,50): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(26,50): warning C4244:         with
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(26,50): warning C4244:         [
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(26,50): warning C4244:             T=unsigned int
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(26,50): warning C4244:         ]
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(26,25): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(26,25): warning C4244:         with
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(26,25): warning C4244:         [
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(26,25): warning C4244:             T=unsigned int
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(26,25): warning C4244:         ]
+  Config.cpp
+  ServiceLocator.cpp
+  GraphicService.cpp
+  GameService.cpp
   ImageView.cpp
   Generating Code...
+  LINK : D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\x64\Debug\Duck Hunt.exe not found or not built by the last incremental link; performing full link
   Duck Hunt.vcxproj -> D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\x64\Debug\Duck Hunt.exe
