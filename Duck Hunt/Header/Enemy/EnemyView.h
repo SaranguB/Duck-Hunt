@@ -23,7 +23,7 @@ namespace Enemy
 
 		void InitializeEnemySprite();
 
-		void Initialize();
+		void Initialize(EnemyController* controller);
 		void Update();
 		void Render();
 

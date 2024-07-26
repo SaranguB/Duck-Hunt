@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\EnemyService.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|solutionrelative:Source\\Enemy\\EnemyService.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Header\\Enemy\\EnemyService.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|solutionrelative:Header\\Enemy\\EnemyService.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\GreenDuckController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|solutionrelative:Source\\Enemy\\GreenDuckController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\EnemyController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|solutionrelative:Source\\Enemy\\EnemyController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\UI\\UIElement\\ImageView.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|solutionrelative:Source\\UI\\UIElement\\ImageView.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Header\\Enemy\\EnemyModel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|solutionrelative:Header\\Enemy\\EnemyModel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -17,18 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Header\\Enemy\\EnemyView.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|solutionrelative:Header\\Enemy\\EnemyView.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\EnemyController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|solutionrelative:Source\\Enemy\\EnemyController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\EnemyService.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{18B87A93-597F-4A6B-91FB-B01725CFB982}|Duck Hunt.vcxproj|solutionrelative:Source\\Enemy\\EnemyService.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\GreenDuckController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\Enemy\\GreenDuckController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,19 +51,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EnemyModel.h",
-              "DocumentMoniker": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Header\\Enemy\\EnemyModel.h",
-              "RelativeDocumentMoniker": "Header\\Enemy\\EnemyModel.h",
-              "ToolTip": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Header\\Enemy\\EnemyModel.h",
-              "RelativeToolTip": "Header\\Enemy\\EnemyModel.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-26T11:02:25.937Z",
+              "Title": "EnemyService.cpp",
+              "DocumentMoniker": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\EnemyService.cpp",
+              "RelativeDocumentMoniker": "Source\\Enemy\\EnemyService.cpp",
+              "ToolTip": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\EnemyService.cpp",
+              "RelativeToolTip": "Source\\Enemy\\EnemyService.cpp",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAEwAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-26T10:59:58.791Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "EnemyService.h",
+              "DocumentMoniker": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Header\\Enemy\\EnemyService.h",
+              "RelativeDocumentMoniker": "Header\\Enemy\\EnemyService.h",
+              "ToolTip": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Header\\Enemy\\EnemyService.h",
+              "RelativeToolTip": "Header\\Enemy\\EnemyService.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-26T11:19:31.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ImageView.cpp",
+              "DocumentMoniker": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\UI\\UIElement\\ImageView.cpp",
+              "RelativeDocumentMoniker": "Source\\UI\\UIElement\\ImageView.cpp",
+              "ToolTip": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\UI\\UIElement\\ImageView.cpp",
+              "RelativeToolTip": "Source\\UI\\UIElement\\ImageView.cpp",
+              "ViewState": "AQIAABoAAAAAAAAAAAAnwCkAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-26T11:10:08.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "EnemyView.h",
               "DocumentMoniker": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Header\\Enemy\\EnemyView.h",
               "RelativeDocumentMoniker": "Header\\Enemy\\EnemyView.h",
@@ -63,23 +97,25 @@
               "RelativeToolTip": "Header\\Enemy\\EnemyView.h",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-26T11:02:11.485Z"
+              "WhenOpened": "2024-07-26T11:02:11.485Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "EnemyView.cpp",
               "DocumentMoniker": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\EnemyView.cpp",
               "RelativeDocumentMoniker": "Source\\Enemy\\EnemyView.cpp",
               "ToolTip": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\EnemyView.cpp",
               "RelativeToolTip": "Source\\Enemy\\EnemyView.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-26T11:01:17.265Z"
+              "WhenOpened": "2024-07-26T11:01:17.265Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "EnemyModel.cpp",
               "DocumentMoniker": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\EnemyModel.cpp",
               "RelativeDocumentMoniker": "Source\\Enemy\\EnemyModel.cpp",
@@ -92,39 +128,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EnemyService.cpp",
-              "DocumentMoniker": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\EnemyService.cpp",
-              "RelativeDocumentMoniker": "Source\\Enemy\\EnemyService.cpp",
-              "ToolTip": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\EnemyService.cpp",
-              "RelativeToolTip": "Source\\Enemy\\EnemyService.cpp",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-26T10:59:58.791Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "GreenDuckController.cpp",
               "DocumentMoniker": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\GreenDuckController.cpp",
               "RelativeDocumentMoniker": "Source\\Enemy\\GreenDuckController.cpp",
               "ToolTip": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\GreenDuckController.cpp",
               "RelativeToolTip": "Source\\Enemy\\GreenDuckController.cpp",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-26T11:00:59.477Z"
+              "WhenOpened": "2024-07-26T11:00:59.477Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "EnemyController.cpp",
               "DocumentMoniker": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\EnemyController.cpp",
               "RelativeDocumentMoniker": "Source\\Enemy\\EnemyController.cpp",
               "ToolTip": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Source\\Enemy\\EnemyController.cpp",
               "RelativeToolTip": "Source\\Enemy\\EnemyController.cpp",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAnwCAAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-26T11:01:06.186Z"
+              "WhenOpened": "2024-07-26T11:01:06.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EnemyModel.h",
+              "DocumentMoniker": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Header\\Enemy\\EnemyModel.h",
+              "RelativeDocumentMoniker": "Header\\Enemy\\EnemyModel.h",
+              "ToolTip": "D:\\Outscal\\C\u002B\u002B\\Self\\Duck-Hunt\\Duck-Hunt\\Duck Hunt\\Header\\Enemy\\EnemyModel.h",
+              "RelativeToolTip": "Header\\Enemy\\EnemyModel.h",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAoAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-26T11:09:43.96Z",
+              "EditorCaption": ""
             }
           ]
         }

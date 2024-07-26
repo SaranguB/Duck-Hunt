@@ -1,26 +1,35 @@
 #pragma once
 #include <SFML/System/Vector2.hpp>
 
+
 namespace Enemy
 {
 	class EnemyView;
 	class EnemyModel;
+	enum class EnemyType;
+
+	enum class MovementDirection;
 
 	class EnemyController
 	{
-	private:
+	protected:
 		EnemyView* enemyView;
 		EnemyModel* enemyModel;
+		void HandleOutOfBounds();
+
 
 
 	public:
-		EnemyController();
-		~EnemyController();
+		EnemyController(EnemyType type);
+		virtual ~EnemyController();
 
-		void Initialize();
+		virtual void Move() = 0;
+
+		virtual void Initialize();
 		void Update();
 		void Render();
 
 		sf::Vector2f GetEnemyPosition();
+		MovementDirection GetRandomMovementDirection();
 	};
 }

@@ -2,6 +2,8 @@
 #include "../../Header/Enemy/EnemyModel.h"
 #include "../../Header/Global/Config.h"
 #include "../../Header/Enemy/EnemyController.h"
+#include "../../Header/Enemy/EnemyConfig.h"
+
 namespace Enemy
 {
 	using namespace UI::UIElement;
@@ -17,14 +19,15 @@ namespace Enemy
 	{
 	}
 
-	void EnemyView::Initialize()
+	void EnemyView::Initialize(EnemyController* controller)
 	{
-		enemyController = new EnemyController();
+		enemyController = controller;
 		InitializeEnemySprite();
 	}
 
 	void EnemyView::InitializeEnemySprite()
 	{
+		
 		enemyImage->Initialize(Config::Green_Duck_Enemy, 
 			enemySpriteWidth, enemySpriteHeight, enemyController->GetEnemyPosition() );
 

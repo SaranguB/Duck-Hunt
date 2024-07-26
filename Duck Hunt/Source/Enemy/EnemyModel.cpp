@@ -1,10 +1,11 @@
 #include "../../Header/Enemy/EnemyModel.h"
+#include "../../Header/Enemy/EnemyConfig.h"
+
 
 namespace Enemy
 {
-	EnemyModel::EnemyModel()
+	EnemyModel::EnemyModel(EnemyType type)
 	{
-
 	}
 
 	EnemyModel::~EnemyModel()
@@ -16,10 +17,6 @@ namespace Enemy
 		enemyPosition = referencePosition;
 	}
 
-	void EnemyModel::Update()
-	{
-
-	}
 
 	sf::Vector2f EnemyModel::GetEnemyPosition()
 	{
@@ -28,6 +25,7 @@ namespace Enemy
 
 	void EnemyModel::SetEnemyPosition(sf::Vector2f position)
 	{
-
+		enemyPosition = position;
 	}
+	
 }
