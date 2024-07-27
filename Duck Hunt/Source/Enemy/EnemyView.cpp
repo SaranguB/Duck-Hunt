@@ -44,4 +44,8 @@ namespace Enemy
 	{
 		enemyImage->Render();
 	}
+	sf::Sprite& EnemyView::GetEnemySprite()
+	{
+		return enemyImage->GetImageSprite();
+	}
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Graphics.hpp>
 
 
 namespace Enemy
@@ -31,5 +32,7 @@ namespace Enemy
 
 		sf::Vector2f GetEnemyPosition();
 		MovementDirection GetRandomMovementDirection();
+
+		sf::Sprite& GetEnemySprite();
 	};
 }

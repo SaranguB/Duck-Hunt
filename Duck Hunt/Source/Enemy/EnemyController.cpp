@@ -63,5 +63,11 @@ namespace Enemy
 		return static_cast<Enemy::MovementDirection>(randomType);
 		
 	}
+
+	sf::Sprite& EnemyController::GetEnemySprite()
+	{
+		
+		return enemyView->GetEnemySprite();
+	}
 	
 }

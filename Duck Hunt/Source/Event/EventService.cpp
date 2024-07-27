@@ -54,6 +54,11 @@ namespace Event
 
 	}
 
+	bool EventService::PressedLeftMouseButton()
+	{
+		return gameEvent.key.code == sf::Event::MouseButtonPressed && gameEvent.mouseButton.button == sf::Mouse::Left;
+	}
+
 	bool EventService::ISGameWindowOpen()
 	{
 		return gameWindow != nullptr;

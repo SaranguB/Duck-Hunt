@@ -27,5 +27,7 @@ namespace Enemy
 		void Update();
 		void Render();
 
+		sf::Sprite& GetEnemySprite();
+
 	};
 }

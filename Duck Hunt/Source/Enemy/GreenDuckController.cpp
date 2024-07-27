@@ -76,6 +76,7 @@ namespace Enemy
 			}
 		}
 
+		
 		void GreenDuckController::MoveLeft()
 		{
 			

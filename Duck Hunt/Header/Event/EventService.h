@@ -17,6 +17,8 @@ namespace Event
 
 		bool ISKeyBoardEvent();
 		bool PressedEscapeKey();
+		
+		
 
 	public:
 		EventService();
@@ -26,6 +28,8 @@ namespace Event
 
 		void Initialize();
 		void Update();
+
+		bool PressedLeftMouseButton();
 		
 
 

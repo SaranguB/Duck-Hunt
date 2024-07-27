@@ -1,6 +1,7 @@
 #pragma once
 #include "../../Header/Enemy/EnemyController.h"
 #include <SFML/System/Clock.hpp>
+#include <SFML/Graphics.hpp>
 
 namespace Enemy
 {
@@ -39,6 +40,7 @@ namespace Enemy
 			MovementDirection currentDirection;
 			sf::Clock directionChangeClock;
 
+		
 
 		};
 	}

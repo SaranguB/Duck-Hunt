@@ -25,12 +25,15 @@ namespace Enemy
 		{
 			delete(enemyList[i]);
 		}
+		enemyList.clear();
 	}
 
 	void EnemyService::Initialize()
 	{
+		spawnTimer = 0;
 		SpawnEnemy();
 	}
+
 
 	void EnemyService::SpawnEnemy()
 	{
@@ -42,14 +45,14 @@ namespace Enemy
 
 	EnemyController* EnemyService::CreateEnemy(EnemyType enemyType)
 	{
-		
+
 		switch (enemyType)
 		{
-			
+
 		case EnemyType::GREEN_DUCK:
 			return new GreenDuckController(EnemyType::GREEN_DUCK);
 		}
-		
+
 	}
 
 	EnemyType EnemyService::GetRandomEnemyType()
@@ -62,11 +65,31 @@ namespace Enemy
 
 	void EnemyService::Update()
 	{
+		
+		UpdateSpawnTimer();
+		ProcessSpawnEnemy();
+
 		for (int i = 0;i < enemyList.size();i++)
 		{
 			enemyList[i]->Update();
+			enemyList[i]->GetEnemySprite();
+			
 		}
-		
+		DestroyFlaggedEnemyList();
+	}
+
+	void EnemyService::UpdateSpawnTimer()
+	{
+		spawnTimer += ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+	}
+
+	void EnemyService::ProcessSpawnEnemy()
+	{
+		if (spawnTimer > spawnInterval)
+		{
+			SpawnEnemy();
+			spawnTimer = 0;
+		}
 	}
 
 	void EnemyService::Render()
@@ -75,5 +98,32 @@ namespace Enemy
 		{
 			enemyList[i]->Render();
 		}
+	}
+
+	void EnemyService::DestroyEnemyAtMousePosition(sf::Vector2f mousePosition)
+	{
+		for (int i = 0; i < enemyList.size(); i++)
+		{
+			if (enemyList[i]->GetEnemySprite().getGlobalBounds().contains(mousePosition))
+			{
+				DestroyEnemy(enemyList[i]);
+				break;
+			}
+		}
+	}
+
+	void EnemyService::DestroyFlaggedEnemyList()
+	{
+		for (int i = 0;i < flaggedEnemyList.size();i++)
+		{
+			delete(flaggedEnemyList[i]);
+		}
+		flaggedEnemyList.clear();
+	}
+
+	void EnemyService::DestroyEnemy(EnemyController* controller)
+	{
+		flaggedEnemyList.push_back(controller);
+		enemyList.erase(std::remove(enemyList.begin(), enemyList.end(), controller), enemyList.end());
 	}
 }

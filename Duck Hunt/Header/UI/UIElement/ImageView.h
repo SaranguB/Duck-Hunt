@@ -31,7 +31,7 @@ namespace UI
 			void SetScale(float imageWidth, float imageHeight);
 			void SetPosition(sf::Vector2f position);
 
-
+			sf::Sprite& GetImageSprite();
 		};
 	}
 }
