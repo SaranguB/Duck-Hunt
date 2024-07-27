@@ -3,7 +3,7 @@
 #include "../../Header/Enemy/EnemyController.h"
 #include"../../Header/Time/TimeService.h"
 #include "../../Header/Enemy/EnemyConfig.h"
-#include "../../Header/Enemy/GreenDuckController.h"
+#include "../../Header/Enemy/Controller/GreenDuckController.h"
 
 namespace Enemy
 {

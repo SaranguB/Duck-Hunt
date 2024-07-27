@@ -153,7 +153,7 @@
     <ClInclude Include="Header\Enemy\EnemyModel.h" />
     <ClInclude Include="Header\Enemy\EnemyService.h" />
     <ClInclude Include="Header\Enemy\EnemyView.h" />
-    <ClInclude Include="Header\Enemy\GreenDuckController.h" />
+    <ClInclude Include="Header\Enemy\Controller\GreenDuckController.h" />
     <ClInclude Include="Header\Event\EventService.h" />
     <ClInclude Include="Header\Gameplay\GameplayController.h" />
     <ClInclude Include="Header\Gameplay\GameplayService.h" />

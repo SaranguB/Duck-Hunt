@@ -1,7 +1,9 @@
-#include "../../Header/Enemy/GreenDuckController.h"
+#include "../../Header/Enemy/Controller/GreenDuckController.h"
 #include "../../Header/Enemy/EnemyConfig.h"
 #include "../../Header/Enemy/EnemyModel.h"
 #include "../../Header/Global/ServiceLocator.h"
+#include <iostream>
+
 namespace Enemy
 {
 	namespace Controller
@@ -11,6 +13,9 @@ namespace Enemy
 
 		GreenDuckController::GreenDuckController(EnemyType type) : EnemyController(type)
 		{
+			std::srand(static_cast<unsigned int>(std::time(nullptr)));
+			currentDirection = GetRandomMovementDirection();
+			
 		}
 
 		GreenDuckController::~GreenDuckController()
@@ -27,7 +32,13 @@ namespace Enemy
 
 		void GreenDuckController::Move()
 		{
-			switch (GetRandomMovementDirection())
+			if (directionChangeClock.getElapsedTime().asSeconds() >= 1.0f)
+			{
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+			}
+
+			switch (currentDirection)
 			{
 
 			case MovementDirection::LEFT:
@@ -67,13 +78,15 @@ namespace Enemy
 
 		void GreenDuckController::MoveLeft()
 		{
-
+			
 			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
 			CurrentPosition.x -= verticalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
 
-			if (CurrentPosition.x <= enemyModel->LeftMostPosition.x)
+			if (enemyModel->GetEnemyPosition().x <= enemyModel->LeftMostPosition.x)
 			{
-				Move();
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+				//std::cout << "Hit Left Boundary, new direction: " << static_cast<int>(currentDirection) << std::endl;
 			}
 			else
 			{
@@ -83,12 +96,19 @@ namespace Enemy
 
 		void GreenDuckController::MoveRight()
 		{
+			
+			//printf("moveright");
+
 			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
 			CurrentPosition.x += verticalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
 
-			if (CurrentPosition.x >= enemyModel->RightMostPosition.x)
+			if (enemyModel->GetEnemyPosition().x >= enemyModel->RightMostPosition.x)
 			{
-				Move();
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+				//std::cout << "Hit Right Boundary, new direction: " << static_cast<int>(currentDirection) << std::endl;
+
+
 			}
 			else
 			{
@@ -99,12 +119,18 @@ namespace Enemy
 
 		void GreenDuckController::MoveUP()
 		{
+			
+
 			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
-			CurrentPosition.y += verticalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			CurrentPosition.y -= HorizontalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
 
 			if (CurrentPosition.y <= enemyModel->TopMostPosition.y)
 			{
-				Move();
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+				//std::cout << "Hit Right Boundary, new direction: " << static_cast<int>(currentDirection) << std::endl;
+
+
 			}
 			else
 			{
@@ -115,11 +141,13 @@ namespace Enemy
 		void GreenDuckController::MoveDown()
 		{
 			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
-			CurrentPosition.y -= verticalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			CurrentPosition.y += HorizontalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
 
-			if (CurrentPosition.y >= enemyModel->BottomMostPosition.y)
+			if (enemyModel->GetEnemyPosition().y >= enemyModel->BottomMostPosition.y)
 			{
-				Move();
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+
 			}
 			else
 			{
@@ -131,15 +159,14 @@ namespace Enemy
 		{
 			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
 
-			CurrentPosition.x -= verticalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-			CurrentPosition.y += verticalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			CurrentPosition.x -= diagonalLeftSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			CurrentPosition.y += diagonalLeftSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
 
-			if (CurrentPosition.y >= enemyModel->BottomMostPosition.y ||
-				CurrentPosition.y <= enemyModel->TopMostPosition.y ||
-				CurrentPosition.x <= enemyModel->LeftMostPosition.x ||
-				CurrentPosition.x >= enemyModel->RightMostPosition.x)
+			if (enemyModel->GetEnemyPosition().y >= enemyModel->BottomMostPosition.y ||
+				enemyModel->GetEnemyPosition().x <= enemyModel->LeftMostPosition.x )
 			{
-				Move();
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
 			}
 			else
 			{
@@ -151,15 +178,15 @@ namespace Enemy
 		{
 			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
 
-			CurrentPosition.x += verticalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-			CurrentPosition.y += verticalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			CurrentPosition.x += diagonalRightSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			CurrentPosition.y += diagonalRightSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
 
-			if (CurrentPosition.y >= enemyModel->BottomMostPosition.y ||
-				CurrentPosition.y <= enemyModel->TopMostPosition.y ||
-				CurrentPosition.x <= enemyModel->LeftMostPosition.x ||
-				CurrentPosition.x >= enemyModel->RightMostPosition.x)
+			if (enemyModel->GetEnemyPosition().y >= enemyModel->BottomMostPosition.y ||
+				enemyModel->GetEnemyPosition().x >= enemyModel->RightMostPosition.x)
 			{
-				Move();
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+
 			}
 			else
 			{
@@ -171,15 +198,15 @@ namespace Enemy
 		{
 			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
 
-			CurrentPosition.x -= verticalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-			CurrentPosition.y -= verticalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			CurrentPosition.x -= diagonalLeftSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			CurrentPosition.y -= diagonalLeftSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
 
-			if (CurrentPosition.y >= enemyModel->BottomMostPosition.y ||
-				CurrentPosition.y <= enemyModel->TopMostPosition.y ||
-				CurrentPosition.x <= enemyModel->LeftMostPosition.x ||
-				CurrentPosition.x >= enemyModel->RightMostPosition.x)
+			if (enemyModel->GetEnemyPosition().y <= enemyModel->TopMostPosition.y ||
+				enemyModel->GetEnemyPosition().x <= enemyModel->LeftMostPosition.x )
 			{
-				Move();
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+					
 			}
 			else
 			{
@@ -193,15 +220,15 @@ namespace Enemy
 			
 			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
 
-			CurrentPosition.x += verticalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-			CurrentPosition.y -= verticalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			CurrentPosition.x += diagonalRightSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			CurrentPosition.y -= diagonalRightSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
 
-			if (CurrentPosition.y >= enemyModel->BottomMostPosition.y ||
-				CurrentPosition.y <= enemyModel->TopMostPosition.y ||
-				CurrentPosition.x <= enemyModel->LeftMostPosition.x ||
-				CurrentPosition.x >= enemyModel->RightMostPosition.x)
+			if (enemyModel->GetEnemyPosition().y <= enemyModel->TopMostPosition.y ||
+				enemyModel->GetEnemyPosition().x >= enemyModel->RightMostPosition.x)
 			{
-				Move();
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+
 			}
 			else
 			{

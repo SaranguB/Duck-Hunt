@@ -30,7 +30,7 @@ namespace Enemy
 	void EnemyController::Update()
 	{
 		enemyView->Update();
-		//Move();
+		Move();
 		HandleOutOfBounds();
 	}
 

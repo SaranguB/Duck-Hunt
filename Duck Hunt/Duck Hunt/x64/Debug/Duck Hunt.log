@@ -1,20 +1,6 @@
-﻿  GreenDuckController.cpp
-  TimeService.cpp
-D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Time\TimeService.cpp(31,13): warning C4244: 'initializing': conversion from '_Rep' to 'int', possible loss of data
-D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Time\TimeService.cpp(31,13): warning C4244:         with
-D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Time\TimeService.cpp(31,13): warning C4244:         [
-D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Time\TimeService.cpp(31,13): warning C4244:             _Rep=__int64
-D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Time\TimeService.cpp(31,13): warning C4244:         ]
+﻿  EnemyController.cpp
+  EnemyModel.cpp
+  EnemyView.cpp
+  GreenDuckController.cpp
   Generating Code...
-  LINK : D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\x64\Debug\Duck Hunt.exe not found or not built by the last incremental link; performing full link
-EnemyService.obj : warning LNK4099: PDB '' was not found with 'EnemyService.obj' or at ''; linking object as if no debug info
-EnemyController.obj : warning LNK4099: PDB '' was not found with 'EnemyController.obj' or at ''; linking object as if no debug info
-EnemyModel.obj : warning LNK4099: PDB '' was not found with 'EnemyModel.obj' or at ''; linking object as if no debug info
-EnemyView.obj : warning LNK4099: PDB '' was not found with 'EnemyView.obj' or at ''; linking object as if no debug info
-EventService.obj : warning LNK4099: PDB '' was not found with 'EventService.obj' or at ''; linking object as if no debug info
-Gameplayview.obj : warning LNK4099: PDB '' was not found with 'Gameplayview.obj' or at ''; linking object as if no debug info
-GameService.obj : warning LNK4099: PDB '' was not found with 'GameService.obj' or at ''; linking object as if no debug info
-Main.obj : warning LNK4099: PDB '' was not found with 'Main.obj' or at ''; linking object as if no debug info
-ServiceLocator.obj : warning LNK4099: PDB '' was not found with 'ServiceLocator.obj' or at ''; linking object as if no debug info
-ImageView.obj : warning LNK4099: PDB '' was not found with 'ImageView.obj' or at ''; linking object as if no debug info
   Duck Hunt.vcxproj -> D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\x64\Debug\Duck Hunt.exe

@@ -23,11 +23,13 @@ namespace UI
 			gameWindow = ServiceLocator::GetInstance()->GetGraphicService()->GetGameWIndow();
 			SetTexture(texturePath);
 			SetScale(imageWidth, imageHeight);
+			SetPosition(position);
 
 		}
 
 		void ImageView::Update()
 		{
+
 		}
 		
 		void ImageView::SetTexture(sf::String texturePath)
@@ -47,6 +49,11 @@ namespace UI
 			float scaleY = imageHeight / static_cast<float> (imageSprite.getTexture()->getSize().y);
 
 			imageSprite.setScale(scaleX, scaleY);
+		}
+
+		void ImageView::SetPosition(sf::Vector2f position)
+		{
+			imageSprite.setPosition(position);
 		}
 
 		void ImageView::Render()

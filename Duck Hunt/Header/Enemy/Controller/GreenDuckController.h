@@ -1,5 +1,6 @@
 #pragma once
 #include "../../Header/Enemy/EnemyController.h"
+#include <SFML/System/Clock.hpp>
 
 namespace Enemy
 {
@@ -30,10 +31,15 @@ namespace Enemy
 			void Move() override;
 
 
-			float verticalSpeed = 200.f;
-			float HorizontalSpeed = 200.f;
-			float diagonalLeftSpeed = 200.f;
-			float diagonalRightSpeed = 200.f;
+			float verticalSpeed = 400.f;
+			float HorizontalSpeed = 500.f;
+			float diagonalLeftSpeed = 600.f;
+			float diagonalRightSpeed = 700.f;
+
+			MovementDirection currentDirection;
+			sf::Clock directionChangeClock;
+
+
 		};
 	}
 }

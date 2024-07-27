@@ -29,6 +29,7 @@ namespace UI
 
 			void SetTexture(sf::String texturePath);
 			void SetScale(float imageWidth, float imageHeight);
+			void SetPosition(sf::Vector2f position);
 
 
 		};
