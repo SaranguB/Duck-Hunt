@@ -34,4 +34,13 @@
 # Others
 *.vs/
 *x64/
+<<<<<<< HEAD
 /Duck Hunt/.vs
+=======
+*.json
+*.ilk
+*.log
+*.suo
+*.db
+*.json
+>>>>>>> 9ae6e4e330442251c9227334ac78f5da061be244

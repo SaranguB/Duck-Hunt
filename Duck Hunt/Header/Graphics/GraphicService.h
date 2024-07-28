@@ -9,7 +9,7 @@ namespace Graphics
 		sf::String gameWindowTitle = "Duck Hunt";
 		int gameWindowWidth = 1920;
 		int gameWindowHeight = 1080;
-		sf::Color gameWindowColor = sf::Color::Blue;
+		sf::Color gameWindowColor = sf::Color::Cyan;
 		int frameRate = 60;
 
 		sf::Texture bgTexture;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Main.cpp
   EnemyController.cpp
   EnemyModel.cpp
@@ -22,4 +23,7 @@ D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.c
   ImageView.cpp
   Generating Code...
   LINK : D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\x64\Debug\Duck Hunt.exe not found or not built by the last incremental link; performing full link
+=======
+﻿  ServiceLocator.cpp
+>>>>>>> 9ae6e4e330442251c9227334ac78f5da061be244
   Duck Hunt.vcxproj -> D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\x64\Debug\Duck Hunt.exe
