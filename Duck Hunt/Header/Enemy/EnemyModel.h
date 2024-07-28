@@ -24,7 +24,7 @@ namespace Enemy
 		const sf::Vector2f LeftMostPosition = sf::Vector2f(50.f, 50.f);
 		const sf::Vector2f RightMostPosition = sf::Vector2f(1800.f, 50.f);
 		const sf::Vector2f TopMostPosition = sf::Vector2f(960.f, 0.f);
-		const sf::Vector2f BottomMostPosition = sf::Vector2f(950.f,950.f);
+		const sf::Vector2f BottomMostPosition = sf::Vector2f(950.f,880.f);
 
 		
 		

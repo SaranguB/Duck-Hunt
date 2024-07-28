@@ -72,7 +72,6 @@ namespace Enemy
 		for (int i = 0;i < enemyList.size();i++)
 		{
 			enemyList[i]->Update();
-			enemyList[i]->GetEnemySprite();
 			
 		}
 		DestroyFlaggedEnemyList();
@@ -100,16 +99,30 @@ namespace Enemy
 		}
 	}
 
-	void EnemyService::DestroyEnemyAtMousePosition(sf::Vector2f mousePosition)
+	bool EnemyService::DestroyEnemyAtMousePosition(sf::Vector2f mousePosition)
 	{
 		for (int i = 0; i < enemyList.size(); i++)
 		{
-			if (enemyList[i]->GetEnemySprite().getGlobalBounds().contains(mousePosition))
+			sf::FloatRect bounds = enemyList[i]->GetEnemySprite().getGlobalBounds();
+			//printf("Checking enemy %d with bounds: left=%f, top=%f, width=%f, height=%f\n", i, bounds.left, bounds.top, bounds.width, bounds.height);
+		
+
+			if (bounds.contains(mousePosition))
 			{
+				//printf("Mouse position %f, %f is within the bounds of enemy %d\n", mousePosition.x, mousePosition.y, i);
 				DestroyEnemy(enemyList[i]);
+				return true;
 				break;
+
 			}
+			
 		}
+	}
+
+	void EnemyService::DestroyEnemy(EnemyController* controller)
+	{
+		flaggedEnemyList.push_back(controller);
+		enemyList.erase(std::remove(enemyList.begin(), enemyList.end(), controller), enemyList.end());
 	}
 
 	void EnemyService::DestroyFlaggedEnemyList()
@@ -121,9 +134,5 @@ namespace Enemy
 		flaggedEnemyList.clear();
 	}
 
-	void EnemyService::DestroyEnemy(EnemyController* controller)
-	{
-		flaggedEnemyList.push_back(controller);
-		enemyList.erase(std::remove(enemyList.begin(), enemyList.end(), controller), enemyList.end());
-	}
+	
 }

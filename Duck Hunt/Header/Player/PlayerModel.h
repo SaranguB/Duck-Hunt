@@ -7,7 +7,9 @@ namespace Player
 	{
 	private:
 		int playerScore;
-		int playerAmmo;
+		
+		int maxPlayerAmmo = 5;
+	;
 
 	public:
 		PlayerModel();
@@ -17,8 +19,10 @@ namespace Player
 		
 		
 		void SetPlayerScore(int score);
+		int GetPlayerAmmo();
+	
 		
-
+		static int playerAmmo;
 
 
 	};

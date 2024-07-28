@@ -31,7 +31,7 @@ namespace Enemy
 		void Update();
 		void Render();
 
-		void DestroyEnemyAtMousePosition(sf::Vector2f mousePosition);
+		bool DestroyEnemyAtMousePosition(sf::Vector2f mousePosition);
 		void DestroyFlaggedEnemyList();
 
 

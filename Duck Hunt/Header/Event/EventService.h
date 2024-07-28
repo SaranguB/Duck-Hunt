@@ -4,6 +4,13 @@
 
 namespace Event
 {
+	enum class ButtonState
+	{
+		PRESSED,
+		HELD,
+		RELEASED,
+	};
+
 	class EventService
 	{
 	private:
@@ -18,7 +25,10 @@ namespace Event
 		bool ISKeyBoardEvent();
 		bool PressedEscapeKey();
 		
-		
+		ButtonState	leftMouseButtonState;
+
+		void UpdateMouseButtonState(ButtonState& currentButtonState, sf::Mouse::Button mouseButton);
+
 
 	public:
 		EventService();
@@ -30,7 +40,7 @@ namespace Event
 		void Update();
 
 		bool PressedLeftMouseButton();
-		
+		bool leftMouseButtonPressed = false;
 
 
 	};

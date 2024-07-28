@@ -23,6 +23,8 @@ namespace Player
 		sf::Vector2f GetMouseButtonPosition();
 		void ProcessPlayerInput();
 
+		void DecreasePlayerAmmo();
+
 		
 
 

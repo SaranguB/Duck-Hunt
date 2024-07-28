@@ -21,19 +21,43 @@ namespace Player
 
 	void PlayerController::Update()
 	{
-		ProcessPlayerInput();
+		if (playerModel->GetPlayerAmmo() > 0)
+		{
+			ProcessPlayerInput();
+		}
 	}
 
 	void PlayerController::ProcessPlayerInput()
 	{
 		Event::EventService* eventService = ServiceLocator::GetInstance()->GetEventService();
 		gameWindow = ServiceLocator::GetInstance()->GetGraphicService()->GetGameWIndow();
-		
+
 		if (eventService->PressedLeftMouseButton())
 		{
+			/*printf("Mouse click detected.\n");*/
+
+			DecreasePlayerAmmo();
 			sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(*gameWindow));
-		
+			
+			//printf("Mouse Position: %f, %f\n", mousePosition.x, mousePosition.y);
+
+			bool destroyed = false;
+			destroyed = ServiceLocator::GetInstance()->GetEnemyService()->DestroyEnemyAtMousePosition(mousePosition);
+		    
+			/*if (destroyed)
+			{
+				printf("Enemy destroyed at position: %f, %f\n", mousePosition.x, mousePosition.y);
+			}
+			else
+			{
+				printf("No enemy found at position: %f, %f\n", mousePosition.x, mousePosition.y);
+			}*/
 		}
+	}
+
+	void PlayerController::DecreasePlayerAmmo()
+	{
+		PlayerModel::playerAmmo --;
 	}
 
 	sf::Vector2f PlayerController::GetMouseButtonPosition()

@@ -130,7 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Enemy\GreenDuckController.cpp" />
+    <ClCompile Include="Source\Enemy\Controller\GreenDuckController.cpp" />
     <ClCompile Include="Source\Enemy\EnemyService.cpp" />
     <ClCompile Include="Source\Enemy\EnemyController.cpp" />
     <ClCompile Include="Source\Enemy\EnemyModel.cpp" />
