@@ -1,5 +1,6 @@
 #include "../../Header/UI/UIElement/ImageView.h"
 #include "../../Header/Global/ServiceLocator.h"
+#include "../../Header/Global/Config.h"
 
 namespace UI
 {
@@ -18,14 +19,17 @@ namespace UI
 
 		void ImageView::Initialize(sf::String texturePath, float imageWidth, float imageHeight, sf::Vector2f position)
 		{
+			
 			gameWindow = ServiceLocator::GetInstance()->GetGraphicService()->GetGameWIndow();
 			SetTexture(texturePath);
 			SetScale(imageWidth, imageHeight);
+			SetPosition(position);
 
 		}
 
 		void ImageView::Update()
 		{
+
 		}
 		
 		void ImageView::SetTexture(sf::String texturePath)
@@ -35,8 +39,7 @@ namespace UI
 			{
 
 				imageSprite.setTexture(imageTexture);
-
-
+				
 			}
 		}
 
@@ -48,8 +51,19 @@ namespace UI
 			imageSprite.setScale(scaleX, scaleY);
 		}
 
+		void ImageView::SetPosition(sf::Vector2f position)
+		{
+			imageSprite.setPosition(position);
+		}
+
+		sf::Sprite& ImageView::GetImageSprite()
+		{
+			return imageSprite;
+		}
+
 		void ImageView::Render()
 		{
+			
 			gameWindow->draw(imageSprite);
 
 		}

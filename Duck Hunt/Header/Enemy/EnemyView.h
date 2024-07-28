@@ -1,20 +1,33 @@
 #pragma once
 #include "../../Header/UI/UIElement/ImageView.h"
 
+
 namespace Enemy
 {
+	class EnemyModel;
+	class EnemyController;
 	class EnemyView
+		
 	{
 	private:
+		EnemyModel* enemyModel;
+		EnemyController* enemyController;
 		UI::UIElement::ImageView* enemyImage;
 
 	public:
 		EnemyView();
 		~EnemyView();
 		
-		void Initialize();
+		const float enemySpriteHeight = 150.f;
+		const float enemySpriteWidth = 150.f;
+
+		void InitializeEnemySprite();
+
+		void Initialize(EnemyController* controller);
 		void Update();
 		void Render();
+
+		sf::Sprite& GetEnemySprite();
 
 	};
 }

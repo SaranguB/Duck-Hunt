@@ -7,6 +7,7 @@ namespace Event
 
 	EventService::EventService()
 	{
+		leftMouseButtonState = ButtonState::RELEASED;
 		gameWindow = nullptr;
 	}
 	EventService::~EventService()
@@ -21,7 +22,27 @@ namespace Event
 
 	void EventService::Update()
 	{
+		UpdateMouseButtonState(leftMouseButtonState, sf::Mouse::Left);
+	}
 
+	void EventService::UpdateMouseButtonState(ButtonState& currentButtonState, sf::Mouse::Button mouseButton)
+	{
+		if (sf::Mouse::isButtonPressed(mouseButton))
+		{
+			switch (currentButtonState)
+			{
+			case ButtonState::RELEASED:
+				currentButtonState = ButtonState::PRESSED;
+				break;
+			case ButtonState::PRESSED:
+				currentButtonState = ButtonState::HELD;
+				break;
+			}
+		}
+		else
+		{
+			currentButtonState = ButtonState::RELEASED;
+		}
 	}
 
 	void EventService::ProcessEvent()
@@ -34,6 +55,12 @@ namespace Event
 				{
 					gameWindow->close();
 				}
+
+				/*if (gameEvent.type == sf::Event::MouseButtonPressed && gameEvent.mouseButton.button == sf::Mouse::Left)
+				{
+					
+					printf("Left mouse button pressed at (%d, %d)\n", gameEvent.mouseButton.x, gameEvent.mouseButton.y);
+				}*/
 			}
 		}
 	}
@@ -51,6 +78,15 @@ namespace Event
 	bool EventService::PressedEscapeKey()
 	{
 		return gameEvent.key.code == sf::Keyboard::Escape;
+
+	}
+
+	
+
+	bool EventService::PressedLeftMouseButton()
+	{
+		return leftMouseButtonState == ButtonState::PRESSED;
+		
 
 	}
 

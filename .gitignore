@@ -34,3 +34,9 @@
 # Others
 *.vs/
 *x64/
+*.json
+*.ilk
+*.log
+*.suo
+*.db
+*.json
