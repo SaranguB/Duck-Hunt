@@ -6,6 +6,8 @@
 namespace Player
 {
 	using namespace Global;
+	using namespace Wave;
+
 	PlayerController::PlayerController()
 	{
 		playerModel = new PlayerModel();
@@ -23,6 +25,8 @@ namespace Player
 	{
 		
 			ProcessPlayerInput();
+		
+			
 		
 	}
 
@@ -59,11 +63,9 @@ namespace Player
 		PlayerModel::playerAmmo --;
 	}
 
-	sf::Vector2f PlayerController::GetMouseButtonPosition()
-	{
-		return sf::Vector2f();
-	}
 
 	
+
+
 	
 }

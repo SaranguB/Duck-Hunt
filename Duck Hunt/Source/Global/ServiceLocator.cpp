@@ -99,4 +99,8 @@ namespace Global
 	{
 		return playerService;
 	}
+	Wave::WaveService* ServiceLocator::GetWaveService()
+	{
+		return waveService;
+	}
 }
