@@ -11,5 +11,9 @@ namespace Global
 		
 		static const sf::String Green_Duck_Enemy;
 		static const sf::String Red_Duck_Enemy;
+
+		static const sf::String bubble_bobble_font_path;
+		static const sf::String DS_DIGIB_font_path;
+
 	};
 }

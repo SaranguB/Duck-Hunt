@@ -130,6 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\UI\UIElement\TextView.cpp" />
     <ClCompile Include="Source\Wave\WaveServices.cpp" />
     <ClCompile Include="Source\Enemy\Controller\GreenDuckController.cpp" />
     <ClCompile Include="Source\Enemy\EnemyService.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Header\Player\PlayerService.h" />
     <ClInclude Include="Header\Time\TimeService.h" />
     <ClInclude Include="Header\UI\UIElement\ImageView.h" />
+    <ClInclude Include="Header\UI\UIElement\TextView.h" />
     <ClInclude Include="Header\Wave\WaveController.h" />
     <ClInclude Include="Header\Wave\WaveServices.h" />
   </ItemGroup>

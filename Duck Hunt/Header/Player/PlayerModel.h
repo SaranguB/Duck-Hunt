@@ -9,7 +9,6 @@ namespace Player
 		int playerScore;
 		
 		int maxPlayerAmmo = 5;
-	;
 
 	public:
 		PlayerModel();
@@ -23,6 +22,8 @@ namespace Player
 	
 		
 		static int playerAmmo;
+		static int enemiesKilled;
+
 
 
 	};

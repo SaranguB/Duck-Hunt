@@ -29,9 +29,12 @@ namespace Wave
 
 	void WaveService::Reset()
 	{
+
 		waveTimer = 0;
 		clock.restart();
+	
 	}
+
 	bool WaveService::checkTimeForChange()
 	{	
 		return clock.getElapsedTime().asSeconds() >=5 ;

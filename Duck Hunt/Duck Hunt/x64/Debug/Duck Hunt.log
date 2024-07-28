@@ -1,2 +1,13 @@
-﻿  WaveServices.cpp
+﻿  Gameplayview.cpp
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(28,50): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(28,50): warning C4244:         with
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(28,50): warning C4244:         [
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(28,50): warning C4244:             T=unsigned int
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(28,50): warning C4244:         ]
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(28,25): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(28,25): warning C4244:         with
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(28,25): warning C4244:         [
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(28,25): warning C4244:             T=unsigned int
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(28,25): warning C4244:         ]
+D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\Source\Gameplay\Gameplayview.cpp(31,29): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
   Duck Hunt.vcxproj -> D:\Outscal\C++\Self\Duck-Hunt\Duck-Hunt\Duck Hunt\x64\Debug\Duck Hunt.exe

@@ -3,6 +3,7 @@
 namespace Player
 {
 	int PlayerModel::playerAmmo = 0;
+	int PlayerModel::enemiesKilled = 0;
 
 	PlayerModel::PlayerModel()
 	{

@@ -4,6 +4,7 @@
 #include"../../Header/Time/TimeService.h"
 #include "../../Header/Enemy/EnemyConfig.h"
 #include "../../Header/Enemy/Controller/GreenDuckController.h"
+#include "../../Header/Player/PlayerModel.h"
 
 namespace Enemy
 {
@@ -109,6 +110,7 @@ namespace Enemy
 
 			if (bounds.contains(mousePosition))
 			{
+				Player::PlayerModel::enemiesKilled ++;
 				//printf("Mouse position %f, %f is within the bounds of enemy %d\n", mousePosition.x, mousePosition.y, i);
 				DestroyEnemy(enemyList[i]);
 				return true;
