@@ -21,10 +21,9 @@ namespace Player
 
 	void PlayerController::Update()
 	{
-		if (playerModel->GetPlayerAmmo() > 0)
-		{
+		
 			ProcessPlayerInput();
-		}
+		
 	}
 
 	void PlayerController::ProcessPlayerInput()

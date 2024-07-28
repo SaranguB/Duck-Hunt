@@ -54,7 +54,6 @@ namespace Global
 		timeService->Initialize();
 		enemyService->Initialize();
 		gameplayService->Initialize();
-
 		playerService->Initialize();
 	}
 	void ServiceLocator::Update()
@@ -62,8 +61,8 @@ namespace Global
 		eventService->Update();
 		timeService->Update();
 		enemyService->Update();
-		playerService->Update();
 		gameplayService->Update();
+		playerService->Update();
 
 
 
