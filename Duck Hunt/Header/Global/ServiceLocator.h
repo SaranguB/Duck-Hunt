@@ -6,6 +6,7 @@
 #include "../../Header/Enemy/EnemyService.h"
 #include "../../Header/Time/TimeService.h"
 #include "../../Header/Player/PlayerService.h"
+#include "../../Header/Wave/WaveServices.h"
 
 namespace Global
 {
@@ -19,7 +20,7 @@ namespace Global
 		Enemy::EnemyService* enemyService;
 		Time::TimeService* timeService;
 		Player::PlayerService* playerService;
-
+		Wave::WaveService* waveService;
 
 		ServiceLocator();
 		~ServiceLocator();
@@ -42,5 +43,7 @@ namespace Global
 		Enemy::EnemyService* GetEnemyService();
 		Time::TimeService* GetTimeService();
 		Player::PlayerService* GetPlayerService();
+		Wave::WaveService* GetWaveService();
+	
 	};
 }

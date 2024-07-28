@@ -1,10 +1,14 @@
 #pragma once
 #include "../../Header/Global/ServiceLocator.h"
+#include "../../Header/Wave/WaveServices.h"
+
 
 namespace Player
 {
 	class PlayerModel;
 	class Eventservice;
+	enum class Wave::WaveType;
+
 	class PlayerController
 	{
 	private:
@@ -20,10 +24,16 @@ namespace Player
 		void Initialize();
 		void Update();
 		
-		sf::Vector2f GetMouseButtonPosition();
+	
 		void ProcessPlayerInput();
 
 		void DecreasePlayerAmmo();
+
+		void Reset(Wave::WaveType wave);
+
+		
+
+		
 
 		
 
