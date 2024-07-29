@@ -11,6 +11,7 @@ namespace Enemy
 		sf::Vector2f referencePosition = sf::Vector2f(900.f, 880.f);
 		sf::Vector2f enemyPosition;
 
+
 	public:
 		EnemyModel(EnemyType type);
 		~EnemyModel();
@@ -26,7 +27,11 @@ namespace Enemy
 		const sf::Vector2f TopMostPosition = sf::Vector2f(960.f, 0.f);
 		const sf::Vector2f BottomMostPosition = sf::Vector2f(950.f,880.f);
 
-		
+		static int NumberOfEnemies;
+		static int enemiesKilled;
+		static int enemyCount;
+
+
 		
 	};
 }

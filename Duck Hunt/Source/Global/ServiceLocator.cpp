@@ -8,6 +8,7 @@ namespace Global
 	using namespace Enemy;
 	using namespace Time;
 	using namespace Player;
+	using namespace Wave;
 
 	ServiceLocator::ServiceLocator()
 	{
@@ -24,6 +25,7 @@ namespace Global
 		graphicService = new GraphicService();
 		eventService = new EventService();
 		gameplayService = new GameplayService();
+		waveService = new WaveService();
 		enemyService = new EnemyService();
 		timeService = new TimeService();
 		playerService = new PlayerService();
@@ -38,6 +40,7 @@ namespace Global
 		delete(enemyService);
 		delete(timeService);
 		delete(playerService);
+		delete(waveService);
 
 	}
 
@@ -52,6 +55,7 @@ namespace Global
 		graphicService->Initialize();
 		eventService->Initialize();
 		timeService->Initialize();
+		waveService->Initialize();
 		enemyService->Initialize();
 		gameplayService->Initialize();
 		playerService->Initialize();
@@ -60,6 +64,7 @@ namespace Global
 	{
 		eventService->Update();
 		timeService->Update();
+		waveService->Update();
 		enemyService->Update();
 		gameplayService->Update();
 		playerService->Update();
@@ -98,5 +103,9 @@ namespace Global
 	Player::PlayerService* ServiceLocator::GetPlayerService()
 	{
 		return playerService;
+	}
+	Wave::WaveService* ServiceLocator::GetWaveService()
+	{
+		return waveService;
 	}
 }

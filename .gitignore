@@ -40,3 +40,6 @@
 *.suo
 *.db
 *.json
+*.tlog
+*.pdb
+*.db
