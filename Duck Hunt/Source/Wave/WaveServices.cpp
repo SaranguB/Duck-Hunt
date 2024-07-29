@@ -21,7 +21,7 @@ namespace Wave
 	void WaveService::Initialize()
 	{
 		currentWave = WaveType::FIRSTWAVE;
-		EnemiesToBeKilled = 5;
+		EnemiesToBeKilled = 20;
 	}
 
 	void WaveService::Update()
@@ -39,7 +39,7 @@ namespace Wave
 
 	bool WaveService::checkTimeForChange()
 	{	
-		return clock.getElapsedTime().asSeconds() >=10 ;
+		return clock.getElapsedTime().asSeconds() >=30 ;
 	}
 
 	void WaveService::ChangeWave(WaveType wave)

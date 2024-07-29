@@ -4,6 +4,7 @@
 #include"../../Header/Time/TimeService.h"
 #include "../../Header/Enemy/EnemyConfig.h"
 #include "../../Header/Enemy/Controller/GreenDuckController.h"
+#include "../../Header/Enemy/Controller/RedDuckController.h"
 #include "../../Header/Player/PlayerModel.h"
 #include "../../Header/Enemy/EnemyModel.h"
 
@@ -53,16 +54,16 @@ namespace Enemy
 
 		case EnemyType::GREEN_DUCK:
 			return new GreenDuckController(EnemyType::GREEN_DUCK);
+		case EnemyType::RED_DUCK:
+			return new GreenDuckController(EnemyType::RED_DUCK);
 		}
 
 	}
 
 	EnemyType EnemyService::GetRandomEnemyType()
 	{
-		return EnemyType::GREEN_DUCK;
-
-		/*int randomType = std::rand() % 1;
-		return static_cast<Enemy::EnemyType>(randomType);*/
+		int randomType = std::rand() % 2;
+		return static_cast<Enemy::EnemyType>(randomType);
 	}
 
 	void EnemyService::Update()

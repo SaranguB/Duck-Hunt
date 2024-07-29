@@ -34,5 +34,6 @@ namespace Enemy
 		MovementDirection GetRandomMovementDirection();
 
 		sf::Sprite& GetEnemySprite();
+		EnemyType GetEnemyType();
 	};
 }

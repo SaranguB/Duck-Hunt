@@ -21,13 +21,14 @@ namespace Enemy
 		const float enemySpriteHeight = 150.f;
 		const float enemySpriteWidth = 150.f;
 
-		void InitializeEnemySprite();
+		void InitializeEnemySprite(EnemyController* controller);
 
 		void Initialize(EnemyController* controller);
 		void Update();
 		void Render();
 
 		sf::Sprite& GetEnemySprite();
+		sf::String GetEnemyTexturePath();
 
 	};
 }

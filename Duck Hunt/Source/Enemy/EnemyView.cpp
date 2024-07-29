@@ -22,13 +22,13 @@ namespace Enemy
 	void EnemyView::Initialize(EnemyController* controller)
 	{
 		enemyController = controller;
-		InitializeEnemySprite();
+		InitializeEnemySprite(controller);
 	}
 
-	void EnemyView::InitializeEnemySprite()
+	void EnemyView::InitializeEnemySprite(EnemyController* controller)
 	{
 		
-		enemyImage->Initialize(Config::Green_Duck_Enemy, 
+		enemyImage->Initialize(GetEnemyTexturePath(),
 			enemySpriteWidth, enemySpriteHeight, enemyController->GetEnemyPosition() );
 
 	}
@@ -47,5 +47,22 @@ namespace Enemy
 	sf::Sprite& EnemyView::GetEnemySprite()
 	{
 		return enemyImage->GetImageSprite();
+	}
+	sf::String EnemyView::GetEnemyTexturePath()
+	{
+		switch (enemyController->GetEnemyType())
+		{
+
+		case Enemy::EnemyType::GREEN_DUCK:
+			return Config::Green_Duck_Enemy;
+
+
+		case Enemy::EnemyType::RED_DUCK:
+
+			return Config::Red_Duck_Enemy;
+
+
+
+		}
 	}
 }

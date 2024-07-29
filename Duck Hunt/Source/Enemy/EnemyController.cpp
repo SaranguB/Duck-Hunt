@@ -69,5 +69,10 @@ namespace Enemy
 		
 		return enemyView->GetEnemySprite();
 	}
+
+	EnemyType EnemyController::GetEnemyType()
+	{
+		return enemyModel->GetCurrentEnemyType();
+	}
 	
 }
