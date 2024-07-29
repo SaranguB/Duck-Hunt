@@ -24,12 +24,23 @@ namespace Wave
 		void Initialize();
 		void Update();
 
-		void Reset();
+		void ResetTime();
 
 		bool checkTimeForChange();
 
 
 		int speed;
 		int ammo;
+		int EnemiesToBeKilled;
+
+		void ChangeWave(WaveType wave);
+
+		WaveType currentWave;
+		int GetEnemiesToBeKilled();
+
+		void waveDetails();
+
+		WaveType GetCurrentWave();
+		void RestartClock();
 	};
 }

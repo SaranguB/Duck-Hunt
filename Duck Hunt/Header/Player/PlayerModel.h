@@ -22,7 +22,6 @@ namespace Player
 	
 		
 		static int playerAmmo;
-		static int enemiesKilled;
 
 
 
