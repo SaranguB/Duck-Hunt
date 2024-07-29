@@ -6,9 +6,9 @@ namespace Player
 	class PlayerModel
 	{
 	private:
-		int playerScore;
 		
 		int maxPlayerAmmo = 5;
+		int playerScore = 0;
 
 	public:
 		PlayerModel();
@@ -16,12 +16,15 @@ namespace Player
 
 		void Initialize();
 		
-		
-		void SetPlayerScore(int score);
 		int GetPlayerAmmo();
 	
 		
 		static int playerAmmo;
+		
+		int GetPlayerScore();
+		void SetPlayeScore(int score);
+
+		static int playerLives;
 
 
 

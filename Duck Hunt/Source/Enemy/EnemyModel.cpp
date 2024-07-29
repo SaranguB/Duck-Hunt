@@ -4,7 +4,7 @@
 
 namespace Enemy
 {
-	int EnemyModel::NumberOfEnemies = 5;
+	int EnemyModel::NumberOfEnemies = 10;
 	int EnemyModel::enemiesKilled = 0;
 	int EnemyModel::enemyCount = 0;
 

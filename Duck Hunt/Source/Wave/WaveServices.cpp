@@ -3,6 +3,7 @@
 #include "../../Header/Global/ServiceLocator.h"
 #include "../../Header/Player/PlayerModel.h"
 #include "../../Header/Enemy/EnemyModel.h"
+#include <iostream>
 
 namespace Wave
 {
@@ -21,7 +22,7 @@ namespace Wave
 	void WaveService::Initialize()
 	{
 		currentWave = WaveType::FIRSTWAVE;
-		EnemiesToBeKilled = 20;
+		EnemiesToBeKilled = 2;
 	}
 
 	void WaveService::Update()
@@ -39,21 +40,22 @@ namespace Wave
 
 	bool WaveService::checkTimeForChange()
 	{	
-		return clock.getElapsedTime().asSeconds() >=30 ;
+		return clock.getElapsedTime().asSeconds() >= waveTimer;
 	}
 
 	void WaveService::ChangeWave(WaveType wave)
 	{
+
 		switch (wave)
 		{
 		case WaveType::FIRSTWAVE:
-
+			
 			RestartClock();
 			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
 			currentWave = WaveType::SECONDWAVE;
-			Player::PlayerModel::playerAmmo = 9;
-			Enemy::EnemyModel::NumberOfEnemies = 8;
-			EnemiesToBeKilled = 8;
+			Player::PlayerModel::playerAmmo = 10;
+			Enemy::EnemyModel::NumberOfEnemies = 10;
+			EnemiesToBeKilled = 3;
 		}
 
 	}

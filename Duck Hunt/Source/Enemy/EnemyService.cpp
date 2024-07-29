@@ -7,6 +7,7 @@
 #include "../../Header/Enemy/Controller/RedDuckController.h"
 #include "../../Header/Player/PlayerModel.h"
 #include "../../Header/Enemy/EnemyModel.h"
+#include "../../Header/Player/PlayerService.h"
 
 namespace Enemy
 {
@@ -93,21 +94,25 @@ namespace Enemy
 			{
 				if (EnemyModel::enemiesKilled < ServiceLocator::GetInstance()->GetWaveService()->GetEnemiesToBeKilled())
 				{
+					ServiceLocator::GetInstance()->GetPlayerService()->SetCurrentStatus(Player::PlayerStatus::FAILED);
 					ServiceLocator::GetInstance()->GetWaveService()->RestartClock();
 					Reset();
-					ServiceLocator::GetInstance()->GetPlayerService()->Reset();
 					spawnTimer = 0;
 				}
 				else
 				{
-					WaveType currentWave = ServiceLocator::GetInstance()->GetWaveService()->GetCurrentWave();
-					ServiceLocator::GetInstance()->GetWaveService()->ChangeWave(currentWave);
+					ServiceLocator::GetInstance()->GetPlayerService()->SetCurrentStatus(Player::PlayerStatus::WON);
+
+					/*WaveType currentWave = ServiceLocator::GetInstance()->GetWaveService()->GetCurrentWave();
+					ServiceLocator::GetInstance()->GetWaveService()->ChangeWave(currentWave);*/
 				}
 
 			}
 
 			if (EnemyModel::enemyCount < EnemyModel::NumberOfEnemies)
 			{
+				
+
 				SpawnEnemy();
 				spawnTimer = 0;
 			}
@@ -128,15 +133,16 @@ namespace Enemy
 		for (int i = 0; i < enemyList.size(); i++)
 		{
 			sf::FloatRect bounds = enemyList[i]->GetEnemySprite().getGlobalBounds();
-			//printf("Checking enemy %d with bounds: left=%f, top=%f, width=%f, height=%f\n", i, bounds.left, bounds.top, bounds.width, bounds.height);
 
+			//printf("Checking enemy %d with bounds: left=%f, top=%f, width=%f, height=%f\n", i, bounds.left, bounds.top, bounds.width, bounds.height);
 
 			if (bounds.contains(mousePosition))
 			{
 
 				Enemy::EnemyModel::enemiesKilled++;
-				//printf("Mouse position %f, %f is within the bounds of enemy %d\n", mousePosition.x, mousePosition.y, i);
+				IncreaseScore(enemyList[i]);
 				DestroyEnemy(enemyList[i]);
+
 				return true;
 				break;
 
@@ -167,6 +173,23 @@ namespace Enemy
 		}
 		enemyList.clear();
 	}
+
+	void EnemyService::IncreaseScore(EnemyController* controller)
+	{
+		switch (controller->GetEnemyType())
+		{
+
+		case EnemyType::GREEN_DUCK:
+			ServiceLocator::GetInstance()->GetPlayerService()->IncreasePlayerScore(1);
+			break;
+
+		case EnemyType::RED_DUCK:
+			ServiceLocator::GetInstance()->GetPlayerService()->IncreasePlayerScore(2);
+			break;
+		}
+	}
+
+	
 
 	void EnemyService::DestroyFlaggedEnemyList()
 	{

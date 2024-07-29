@@ -65,8 +65,25 @@ namespace Player
 
 	void PlayerController::Reset()
 	{
-		PlayerModel::playerAmmo = 10;
+		PlayerModel::playerAmmo = 6;
 	}
+
+	void PlayerController::SetPlayerScore(int score)
+	{
+		playerModel->SetPlayeScore(score);
+	}
+
+	int PlayerController::GetPlayerScore()
+	{
+		return playerModel->GetPlayerScore();
+	}
+
+	void PlayerController::DecreasePlayerLive()
+	{
+		PlayerModel::playerLives--;
+	}
+
+	
 
 
 

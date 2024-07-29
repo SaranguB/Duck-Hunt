@@ -31,6 +31,10 @@ namespace Player
 
 		void Reset();
 
+		void SetPlayerScore(int score);
+		int GetPlayerScore();
+
+		void DecreasePlayerLive();
 		
 
 		

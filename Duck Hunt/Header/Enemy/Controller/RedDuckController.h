@@ -33,10 +33,10 @@ namespace Enemy
 			void Move() override;
 
 
-			float verticalSpeed = 400.f;
-			float HorizontalSpeed = 500.f;
-			float diagonalLeftSpeed = 600.f;
-			float diagonalRightSpeed = 700.f;
+			float verticalSpeed = 900.f;
+			float HorizontalSpeed = 300.f;
+			float diagonalLeftSpeed = 400.f;
+			float diagonalRightSpeed = 500.f;
 
 			MovementDirection currentDirection;
 			sf::Clock directionChangeClock;
