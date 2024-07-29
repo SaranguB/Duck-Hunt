@@ -26,7 +26,7 @@ namespace Enemy
 		const sf::Vector2f TopMostPosition = sf::Vector2f(960.f, 0.f);
 		const sf::Vector2f BottomMostPosition = sf::Vector2f(950.f,880.f);
 
-		
+		static int NumberOfEnemies;
 		
 	};
 }

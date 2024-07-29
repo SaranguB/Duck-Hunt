@@ -5,6 +5,7 @@
 #include "../../Header/Enemy/EnemyConfig.h"
 #include "../../Header/Enemy/Controller/GreenDuckController.h"
 #include "../../Header/Player/PlayerModel.h"
+#include "../../Header/Enemy/EnemyModel.h"
 
 namespace Enemy
 {
@@ -32,7 +33,7 @@ namespace Enemy
 	void EnemyService::Initialize()
 	{
 		spawnTimer = 0;
-		SpawnEnemy();
+			SpawnEnemy();
 	}
 
 
@@ -42,6 +43,8 @@ namespace Enemy
 		enemyController->Initialize();
 
 		enemyList.push_back(enemyController);
+		EnemyModel::NumberOfEnemies++;
+
 	}
 
 	EnemyController* EnemyService::CreateEnemy(EnemyType enemyType)
@@ -66,14 +69,14 @@ namespace Enemy
 
 	void EnemyService::Update()
 	{
-		
+
 		UpdateSpawnTimer();
 		ProcessSpawnEnemy();
 
 		for (int i = 0;i < enemyList.size();i++)
 		{
 			enemyList[i]->Update();
-			
+
 		}
 		DestroyFlaggedEnemyList();
 	}
@@ -87,6 +90,7 @@ namespace Enemy
 	{
 		if (spawnTimer > spawnInterval)
 		{
+			if (EnemyModel::NumberOfEnemies < 5)
 			SpawnEnemy();
 			spawnTimer = 0;
 		}
@@ -106,18 +110,18 @@ namespace Enemy
 		{
 			sf::FloatRect bounds = enemyList[i]->GetEnemySprite().getGlobalBounds();
 			//printf("Checking enemy %d with bounds: left=%f, top=%f, width=%f, height=%f\n", i, bounds.left, bounds.top, bounds.width, bounds.height);
-		
+
 
 			if (bounds.contains(mousePosition))
 			{
-				Player::PlayerModel::enemiesKilled ++;
+				Player::PlayerModel::enemiesKilled++;
 				//printf("Mouse position %f, %f is within the bounds of enemy %d\n", mousePosition.x, mousePosition.y, i);
 				DestroyEnemy(enemyList[i]);
 				return true;
 				break;
 
 			}
-			
+
 		}
 	}
 
@@ -136,5 +140,5 @@ namespace Enemy
 		flaggedEnemyList.clear();
 	}
 
-	
+
 }

@@ -13,42 +13,72 @@ namespace Gameplay
 	{
 		gameplayImage = new ImageView();
 		enemiesKilledText = new TextView();
+		playerAmmo = new TextView();
 		
 	}
 
 	GameplayView::~GameplayView()
 	{
+		delete(gameplayImage);
+		delete(enemiesKilledText);
+		delete(playerAmmo);
+
 	}
 
 	void GameplayView::Initialize()
 	{
 
-		gameWindow = ServiceLocator::GetInstance()->GetGraphicService()->GetGameWIndow();
-		gameplayImage->Initialize(Config::Duck_Hunt_BG_Texture_Path,
-			gameWindow->getSize().x, gameWindow->getSize().y, sf::Vector2f(0,0));
+		InitializeBackgroundImage();
+		InitializeEnemiesKilledText();
+		InitializePlayerAmmo();
 
-		enemiesKilledText->Initialize("Enemies Killed : 0", sf::Vector2f(enemiesKilledTextXPosition, textYPosition),
-			FontType::BUBBLE_BOBBLE, fontSize, textColor);
+		
 	
 	}
 
 	void GameplayView::Update()
 	{
-		gameplayImage->Update();
-		enemiesKilledText->Update();
+		
 		UpdateEnemiesKilledText();
+		UpdatePlayerAmmoText();
+		
 	}
 	void GameplayView::Render()
 	{
 		gameplayImage->Render();
 		enemiesKilledText->Render();
-
+		playerAmmo->Render();
 	}
 
 	void GameplayView::UpdateEnemiesKilledText()
 	{
 		sf::String enemiesKilledString = "Enemies Killed :" + std::to_string(PlayerModel::enemiesKilled);
 		enemiesKilledText->setText(enemiesKilledString);
+	}
+
+	void GameplayView::UpdatePlayerAmmoText()
+	{
+		sf::String enemiesKilledString = "Player Ammo :" + std::to_string(PlayerModel::playerAmmo);
+		playerAmmo->setText(enemiesKilledString);
+	}
+
+	void GameplayView::InitializeBackgroundImage()
+	{
+		gameWindow = ServiceLocator::GetInstance()->GetGraphicService()->GetGameWIndow();
+		gameplayImage->Initialize(Config::Duck_Hunt_BG_Texture_Path,
+			gameWindow->getSize().x, gameWindow->getSize().y, sf::Vector2f(0, 0));
+	}
+
+	void GameplayView::InitializeEnemiesKilledText()
+	{
+		enemiesKilledText->Initialize("Enemies Killed : 0", sf::Vector2f(enemiesKilledTextXPosition, textYPosition),
+			FontType::BUBBLE_BOBBLE, fontSize, textColor);
+	}
+
+	void GameplayView::InitializePlayerAmmo()
+	{
+		playerAmmo->Initialize("Player Ammo : 0", sf::Vector2f(playerAmmoTextXPosition, textYPosition),
+			FontType::BUBBLE_BOBBLE, fontSize, textColor);
 	}
 
 }

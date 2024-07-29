@@ -23,7 +23,7 @@ namespace Player
 
 	void PlayerController::Update()
 	{
-		
+		if(PlayerModel::playerAmmo >0)
 			ProcessPlayerInput();
 		
 			
