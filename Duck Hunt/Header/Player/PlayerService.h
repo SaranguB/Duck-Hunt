@@ -15,7 +15,7 @@ namespace Player
 		void Initialize();
 		void Update();
 		
-
+		void Reset();
 
 
 	};

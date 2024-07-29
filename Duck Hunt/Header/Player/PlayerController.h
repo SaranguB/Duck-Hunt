@@ -29,7 +29,7 @@ namespace Player
 
 		void DecreasePlayerAmmo();
 
-		void Reset(Wave::WaveType wave);
+		void Reset();
 
 		
 

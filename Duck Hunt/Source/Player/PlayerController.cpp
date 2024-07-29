@@ -63,6 +63,12 @@ namespace Player
 		PlayerModel::playerAmmo --;
 	}
 
+	void PlayerController::Reset()
+	{
+		PlayerModel::playerAmmo = 10;
+	}
+
+
 
 	
 

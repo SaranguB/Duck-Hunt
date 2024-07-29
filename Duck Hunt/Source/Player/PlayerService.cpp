@@ -22,5 +22,10 @@ namespace Player
 	{
 		playerController->Update();
 	}
+
+	void PlayerService::Reset()
+	{
+		playerController->Reset();
+	}
 	
 }

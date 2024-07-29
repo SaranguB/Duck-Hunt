@@ -1,6 +1,7 @@
 #include "../../Header/Gameplay/GameplayView.h"
 #include "../../Header/Global/ServiceLocator.h"
 #include "../../Header/Global/Config.h"
+#include "../../Header/Enemy/EnemyModel.h"
 #include "../../Header/Player/PlayerModel.h"
 
 namespace Gameplay
@@ -8,6 +9,7 @@ namespace Gameplay
 	using namespace UI::UIElement;
 	using namespace Global;
 	using namespace Player;
+	using namespace Enemy;
 
 	GameplayView::GameplayView()
 	{
@@ -52,7 +54,7 @@ namespace Gameplay
 
 	void GameplayView::UpdateEnemiesKilledText()
 	{
-		sf::String enemiesKilledString = "Enemies Killed :" + std::to_string(PlayerModel::enemiesKilled);
+		sf::String enemiesKilledString = "Enemies Killed :" + std::to_string(EnemyModel::enemiesKilled);
 		enemiesKilledText->setText(enemiesKilledString);
 	}
 
