@@ -29,6 +29,7 @@ namespace Player
 	{
 		playerController->Update();
 
+
 		CheckForChange();
 	}
 
@@ -73,6 +74,7 @@ namespace Player
 		{
 		case PlayerStatus::WON:
 		{
+			
 			currentWave = ServiceLocator::GetInstance()->GetWaveService()->GetCurrentWave();
 			ServiceLocator::GetInstance()->GetWaveService()->ChangeWave(currentWave);
 			currentStatus = PlayerStatus::STATIC;
@@ -81,7 +83,7 @@ namespace Player
 
 		case PlayerStatus::FAILED:
 		{
-			gameWindow->clear(sf::Color::Red);
+			ServiceLocator::GetInstance()->GetGraphicService()->ChangeWindowColor(sf::Color::Red);
 			DecreasePlayerLive();
 			Reset();
 			

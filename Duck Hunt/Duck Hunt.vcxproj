@@ -174,7 +174,6 @@
     <ClInclude Include="Header\Time\TimeService.h" />
     <ClInclude Include="Header\UI\UIElement\ImageView.h" />
     <ClInclude Include="Header\UI\UIElement\TextView.h" />
-    <ClInclude Include="Header\Wave\WaveController.h" />
     <ClInclude Include="Header\Wave\WaveServices.h" />
     <ClInclude Include="Header\Enemy\Controller\RedDuckController.h" />
   </ItemGroup>

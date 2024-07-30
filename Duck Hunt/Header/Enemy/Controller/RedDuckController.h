@@ -33,7 +33,7 @@ namespace Enemy
 			void Move() override;
 
 
-			float verticalSpeed = 900.f;
+			float verticalSpeed = 1000.f;
 			float HorizontalSpeed = 300.f;
 			float diagonalLeftSpeed = 400.f;
 			float diagonalRightSpeed = 500.f;
