@@ -7,6 +7,7 @@
 #include "../../Header/Time/TimeService.h"
 #include "../../Header/Player/PlayerService.h"
 #include "../../Header/Wave/WaveServices.h"
+#include "../../Header/Sound/SoundService.h"
 
 namespace Global
 {
@@ -21,6 +22,7 @@ namespace Global
 		Time::TimeService* timeService;
 		Player::PlayerService* playerService;
 		Wave::WaveService* waveService;
+		Sound::SoundService* soundService;
 
 		ServiceLocator();
 		~ServiceLocator();
@@ -44,6 +46,7 @@ namespace Global
 		Time::TimeService* GetTimeService();
 		Player::PlayerService* GetPlayerService();
 		Wave::WaveService* GetWaveService();
+		Sound::SoundService* GetSoundService();
 	
 	};
 }

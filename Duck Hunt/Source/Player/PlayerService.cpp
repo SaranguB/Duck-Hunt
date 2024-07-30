@@ -71,21 +71,24 @@ namespace Player
 		//std::cout << "Current Status: " << static_cast<int>(currentStatus) << std::endl;
 		currentWave = ServiceLocator::GetInstance()->GetWaveService()->GetCurrentWave();
 
+
 		switch (currentStatus)
 		{
 		case PlayerStatus::WON:
 		{
 			ServiceLocator::GetInstance()->GetGraphicService()->ChangeWindowColor(sf::Color::Green);
+			ServiceLocator::GetInstance()->GetSoundService()->PlaySound(Sound::SoundType::WON_SOUND);
+
 			if (currentWave == WaveType::FIRSTWAVE)
 			{
-				printf("first wave\n");
+				//printf("first wave\n");
 				ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(WaveType::SECONDWAVE);
 				currentStatus = PlayerStatus::STATIC;
 				break;
 			}
 			if (currentWave == WaveType::SECONDWAVE)
 			{
-				printf("Second wave\n");
+				//printf("Second wave\n");
 				ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(WaveType::THIRDWAVE);
 				currentStatus = PlayerStatus::STATIC;
 				break;
@@ -94,7 +97,7 @@ namespace Player
 
 			if (currentWave == WaveType::THIRDWAVE)
 			{
-				printf("Third wave\n");
+				//printf("Third wave\n");
 				ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(WaveType::FINISHED);
 				currentStatus = PlayerStatus::STATIC;
 				playerController->ResetGame();
@@ -106,20 +109,21 @@ namespace Player
 
 		case PlayerStatus::FAILED:
 		{
-			
+			ServiceLocator::GetInstance()->GetSoundService()->PlaySound(Sound::SoundType::FAIL_SOUND);
 			ServiceLocator::GetInstance()->GetGraphicService()->ChangeWindowColor(sf::Color::Red);
 			DecreasePlayerLive();
 
+
 			if (currentWave == WaveType::FIRSTWAVE)
 			{
-				printf("Failed first wave\n");
+				//printf("Failed first wave\n");
 				ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(WaveType::FIRSTWAVE);
 				currentStatus = PlayerStatus::STATIC;
 				break;
 			}
 			if (currentWave == WaveType::SECONDWAVE)
 			{
-				printf("Failed Second wave\n");
+				//printf("Failed Second wave\n");
 				ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(WaveType::SECONDWAVE);
 				currentStatus = PlayerStatus::STATIC;
 				break;
@@ -128,7 +132,7 @@ namespace Player
 
 			if (currentWave == WaveType::THIRDWAVE)
 			{
-				printf("Failed Third wave\n");
+				//printf("Failed Third wave\n");
 				ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(WaveType::THIRDWAVE);
 				currentStatus = PlayerStatus::STATIC;
 

@@ -8,6 +8,7 @@
 #include "../../Header/Player/PlayerModel.h"
 #include "../../Header/Enemy/EnemyModel.h"
 #include "../../Header/Player/PlayerService.h"
+#include "../../Header/Sound/SoundService.h"
 
 namespace Enemy
 {
@@ -33,6 +34,7 @@ namespace Enemy
 	void EnemyService::Initialize()
 	{
 		spawnTimer = 0;
+		ServiceLocator::GetInstance()->GetSoundService()->PlaySound(Sound::SoundType::START_MUSIC);
 		SpawnEnemy();
 	}
 
@@ -140,7 +142,10 @@ namespace Enemy
 			if (bounds.contains(mousePosition))
 			{
 
+				ServiceLocator::GetInstance()->GetSoundService()->PlaySound(Sound::SoundType::DUCK_SOUND);
+
 				Enemy::EnemyModel::enemiesKilled++;
+
 				IncreaseScore(enemyList[i]);
 				DestroyEnemy(enemyList[i]);
 

@@ -25,19 +25,14 @@ namespace Player
 	{
 		if (PlayerModel::playerLives <= 0)
 		{
-			ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(WaveType::FIRSTWAVE);
-			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
-			ServiceLocator::GetInstance()->GetWaveService()->RestartClock();
 			ResetGame();
-			PlayerModel::playerLives = 3;
-
 		}
-	
+
 
 		if (PlayerModel::playerAmmo > 0)
 			ProcessPlayerInput();
 
-		
+
 
 
 
@@ -98,6 +93,10 @@ namespace Player
 
 	void PlayerController::ResetGame()
 	{
+		ServiceLocator::GetInstance()->GetSoundService()->PlaySound(Sound::SoundType::START_MUSIC);
+		ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(WaveType::FIRSTWAVE);
+		ServiceLocator::GetInstance()->GetEnemyService()->Reset();
+		ServiceLocator::GetInstance()->GetWaveService()->RestartClock();
 		PlayerModel::playerLives = 3;
 		PlayerModel::playerAmmo = 5;
 		playerModel->SetPlayeScore(0);
