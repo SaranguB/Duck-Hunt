@@ -41,12 +41,13 @@ namespace Enemy
 
 	void EnemyService::SpawnEnemy()
 	{
-		ServiceLocator::GetInstance()->GetGraphicService()->ChangeWindowColor(sf::Color::Cyan);
 		EnemyController* enemyController = CreateEnemy(GetRandomEnemyType());
 		enemyController->Initialize();
 
 		enemyList.push_back(enemyController);
 		EnemyModel::enemyCount++;
+		ServiceLocator::GetInstance()->GetGraphicService()->ChangeWindowColor(sf::Color::Cyan);
+
 
 	}
 

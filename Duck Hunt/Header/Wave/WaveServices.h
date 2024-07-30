@@ -17,7 +17,7 @@ namespace Wave
 	{
 		PlayerModel* playerModel;
 	private:
-		int waveTimer = 10;
+		int waveTimer = 7;
 		sf::Clock clock;
 
 	public:
@@ -36,12 +36,12 @@ namespace Wave
 		int ammo;
 		int EnemiesToBeKilled;
 
-		void ChangeWave(WaveType wave);
+	
 
 		WaveType currentWave;
 		int GetEnemiesToBeKilled();
 
-		void waveDetails();
+
 
 		WaveType GetCurrentWave();
 		void SetCurrentWave(WaveType wave);

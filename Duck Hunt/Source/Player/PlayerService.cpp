@@ -92,7 +92,7 @@ namespace Player
 				ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(WaveType::THIRDWAVE);
 				currentStatus = PlayerStatus::STATIC;
 				break;
-			
+
 			}
 
 			if (currentWave == WaveType::THIRDWAVE)
@@ -100,11 +100,9 @@ namespace Player
 				//printf("Third wave\n");
 				ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(WaveType::FINISHED);
 				currentStatus = PlayerStatus::STATIC;
-				playerController->ResetGame();
-				
 				break;
 			}
-			
+
 		}
 
 		case PlayerStatus::FAILED:
@@ -149,5 +147,11 @@ namespace Player
 	{
 		playerController->DecreasePlayerLive();
 	}
+
+	void PlayerService::ResetGame()
+	{
+		playerController->ResetGame();
+	}
+
 
 }

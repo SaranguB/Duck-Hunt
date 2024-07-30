@@ -34,6 +34,6 @@ namespace Player
 		void CheckForChange();
 
 		void DecreasePlayerLive();
-
+		void ResetGame();
 	};
 }

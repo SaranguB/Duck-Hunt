@@ -54,10 +54,10 @@ namespace Wave
 			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
 			currentWave = WaveType::FIRSTWAVE;
 
-			waveTimer = 5;
+			waveTimer = 7;
 			Player::PlayerModel::playerAmmo = 5;
-			Enemy::EnemyModel::NumberOfEnemies = 8;
-			EnemiesToBeKilled = 2;
+			Enemy::EnemyModel::NumberOfEnemies = 4;
+			EnemiesToBeKilled = 3;
 			break;
 
 		case WaveType::SECONDWAVE:
@@ -65,10 +65,10 @@ namespace Wave
 			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
 			currentWave = WaveType::SECONDWAVE;
 
-			waveTimer = 8;
+			waveTimer = 25;
 			Player::PlayerModel::playerAmmo = 10;
 			Enemy::EnemyModel::NumberOfEnemies = 8;
-			EnemiesToBeKilled = 2;
+			EnemiesToBeKilled = 5;
 			break;
 
 		case WaveType::THIRDWAVE:
@@ -76,16 +76,17 @@ namespace Wave
 			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
 			currentWave = WaveType::THIRDWAVE;
 
-			waveTimer = 10;
+			waveTimer = 30;
 			Player::PlayerModel::playerAmmo = 17;
-			Enemy::EnemyModel::NumberOfEnemies = 15;
-			EnemiesToBeKilled = 2;
+			Enemy::EnemyModel::NumberOfEnemies = 12;
+			EnemiesToBeKilled = 10;
 			break;
 
 		case WaveType::FINISHED:
 
 			RestartClock();
 			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
+			ServiceLocator::GetInstance()->GetPlayerService()->ResetGame();
 			currentWave = WaveType::FIRSTWAVE;
 
 
