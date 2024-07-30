@@ -37,7 +37,8 @@ namespace Graphics
 		sf::RenderWindow* GetGameWIndow();
 		sf::Color GetWindowColor();
 
-		
+		void ChangeWindowColor(sf::Color color);
+
 		
 	};
 }

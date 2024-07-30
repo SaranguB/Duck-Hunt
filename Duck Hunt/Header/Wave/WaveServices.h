@@ -4,17 +4,20 @@
 namespace Wave
 {
 	class PlayerModel;
-
+	
+	
 	enum class WaveType
 	{
 		FIRSTWAVE,
 		SECONDWAVE,
+		THIRDWAVE,
+		FINISHED,
 	};
 	class WaveService
 	{
 		PlayerModel* playerModel;
 	private:
-		int waveTimer = 5;
+		int waveTimer = 10;
 		sf::Clock clock;
 
 	public:
@@ -41,6 +44,7 @@ namespace Wave
 		void waveDetails();
 
 		WaveType GetCurrentWave();
+		void SetCurrentWave(WaveType wave);
 		void RestartClock();
 	};
 }

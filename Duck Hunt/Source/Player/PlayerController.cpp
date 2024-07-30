@@ -23,11 +23,24 @@ namespace Player
 
 	void PlayerController::Update()
 	{
-		if(PlayerModel::playerAmmo >0)
+		if (PlayerModel::playerLives <= 0)
+		{
+			ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(WaveType::FIRSTWAVE);
+			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
+			ServiceLocator::GetInstance()->GetWaveService()->RestartClock();
+			ResetGame();
+			PlayerModel::playerLives = 3;
+
+		}
+	
+
+		if (PlayerModel::playerAmmo > 0)
 			ProcessPlayerInput();
+
 		
-			
-		
+
+
+
 	}
 
 	void PlayerController::ProcessPlayerInput()
@@ -41,12 +54,12 @@ namespace Player
 
 			DecreasePlayerAmmo();
 			sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(*gameWindow));
-			
+
 			//printf("Mouse Position: %f, %f\n", mousePosition.x, mousePosition.y);
 
 			bool destroyed = false;
 			destroyed = ServiceLocator::GetInstance()->GetEnemyService()->DestroyEnemyAtMousePosition(mousePosition);
-		    
+
 			/*if (destroyed)
 			{
 				printf("Enemy destroyed at position: %f, %f\n", mousePosition.x, mousePosition.y);
@@ -60,18 +73,42 @@ namespace Player
 
 	void PlayerController::DecreasePlayerAmmo()
 	{
-		PlayerModel::playerAmmo --;
+		PlayerModel::playerAmmo--;
 	}
 
 	void PlayerController::Reset()
 	{
-		PlayerModel::playerAmmo = 10;
+		PlayerModel::playerAmmo = 5;
+	}
+
+	void PlayerController::SetPlayerScore(int score)
+	{
+		playerModel->SetPlayeScore(score);
+	}
+
+	int PlayerController::GetPlayerScore()
+	{
+		return playerModel->GetPlayerScore();
+	}
+
+	void PlayerController::DecreasePlayerLive()
+	{
+		PlayerModel::playerLives--;
+	}
+
+	void PlayerController::ResetGame()
+	{
+		PlayerModel::playerLives = 3;
+		PlayerModel::playerAmmo = 5;
+		playerModel->SetPlayeScore(0);
 	}
 
 
 
-	
 
 
-	
+
+
+
+
 }

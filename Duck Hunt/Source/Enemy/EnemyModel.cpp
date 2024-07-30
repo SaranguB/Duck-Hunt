@@ -4,12 +4,13 @@
 
 namespace Enemy
 {
-	int EnemyModel::NumberOfEnemies = 3;
+	int EnemyModel::NumberOfEnemies = 10;
 	int EnemyModel::enemiesKilled = 0;
 	int EnemyModel::enemyCount = 0;
 
 	EnemyModel::EnemyModel(EnemyType type)
 	{
+		currentEnemyType = type;
 	}
 
 	EnemyModel::~EnemyModel()
@@ -30,6 +31,11 @@ namespace Enemy
 	void EnemyModel::SetEnemyPosition(sf::Vector2f position)
 	{
 		enemyPosition = position;
+	}
+
+	EnemyType EnemyModel::GetCurrentEnemyType()
+	{
+		return currentEnemyType;
 	}
 	
 }

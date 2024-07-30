@@ -29,6 +29,8 @@ namespace Enemy
 
 		void Destroy();
 
+		void IncreaseScore(EnemyController* controller);
+
 	public:
 		EnemyService();
 		~EnemyService();
@@ -42,7 +44,7 @@ namespace Enemy
 		bool DestroyEnemyAtMousePosition(sf::Vector2f mousePosition);
 		void DestroyFlaggedEnemyList();
 
-
+		
 
 	};
 }

@@ -64,5 +64,10 @@ namespace Graphics
 		return gameWindowColor;
 	}
 
+	void GraphicService::ChangeWindowColor(sf::Color color)
+	{
+		gameWindowColor = color;
+	}
+
 
 }

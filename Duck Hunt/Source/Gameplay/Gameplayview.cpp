@@ -16,7 +16,8 @@ namespace Gameplay
 		gameplayImage = new ImageView();
 		enemiesKilledText = new TextView();
 		playerAmmo = new TextView();
-		
+		playerScore = new TextView();
+		playerLive = new TextView();
 	}
 
 	GameplayView::~GameplayView()
@@ -24,6 +25,8 @@ namespace Gameplay
 		delete(gameplayImage);
 		delete(enemiesKilledText);
 		delete(playerAmmo);
+		delete(playerScore);
+		delete(playerLive);
 
 	}
 
@@ -33,6 +36,9 @@ namespace Gameplay
 		InitializeBackgroundImage();
 		InitializeEnemiesKilledText();
 		InitializePlayerAmmo();
+		InitializePlayerScore();
+		InitializePlayerLive();
+
 
 		
 	
@@ -43,13 +49,16 @@ namespace Gameplay
 		
 		UpdateEnemiesKilledText();
 		UpdatePlayerAmmoText();
-		
+		UpdatePlayerScore();
+		UpdatePlayerLive();
 	}
 	void GameplayView::Render()
 	{
 		gameplayImage->Render();
 		enemiesKilledText->Render();
 		playerAmmo->Render();
+		playerScore->Render();
+		playerLive->Render();
 	}
 
 	void GameplayView::UpdateEnemiesKilledText()
@@ -62,6 +71,21 @@ namespace Gameplay
 	{
 		sf::String enemiesKilledString = "Player Ammo :" + std::to_string(PlayerModel::playerAmmo);
 		playerAmmo->setText(enemiesKilledString);
+	}
+
+	void GameplayView::UpdatePlayerScore()
+	{
+		int score = ServiceLocator::GetInstance()->GetPlayerService()->GetPlayerScore();
+		sf::String enemiesKilledString = "Player Score : " + std::to_string(score);
+		playerScore->setText(enemiesKilledString);
+	
+	}
+
+	void GameplayView::UpdatePlayerLive()
+	{
+		
+		sf::String enemiesKilledString = "Player Health : " + std::to_string(PlayerModel::playerLives);
+		playerLive->setText(enemiesKilledString);
 	}
 
 	void GameplayView::InitializeBackgroundImage()
@@ -80,6 +104,18 @@ namespace Gameplay
 	void GameplayView::InitializePlayerAmmo()
 	{
 		playerAmmo->Initialize("Player Ammo : 0", sf::Vector2f(playerAmmoTextXPosition, textYPosition),
+			FontType::BUBBLE_BOBBLE, fontSize, textColor);
+	}
+
+	void GameplayView::InitializePlayerLive()
+	{
+		playerLive->Initialize("Player Health : 0", sf::Vector2f(playerLiveTextXposition, 1000.f),
+			FontType::BUBBLE_BOBBLE, fontSize, textColor);
+	}
+
+	void GameplayView::InitializePlayerScore()
+	{
+		playerScore->Initialize("Player Score : 0", sf::Vector2f(textXPosition, playerScoreTextYPosition),
 			FontType::BUBBLE_BOBBLE, fontSize, textColor);
 	}
 
