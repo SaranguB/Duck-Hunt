@@ -28,15 +28,16 @@ namespace Player
 			ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(WaveType::FIRSTWAVE);
 			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
 			ServiceLocator::GetInstance()->GetWaveService()->RestartClock();
-			Reset();
+			ResetGame();
 			PlayerModel::playerLives = 3;
 
 		}
+	
 
 		if (PlayerModel::playerAmmo > 0)
 			ProcessPlayerInput();
 
-
+		
 
 
 
@@ -93,6 +94,13 @@ namespace Player
 	void PlayerController::DecreasePlayerLive()
 	{
 		PlayerModel::playerLives--;
+	}
+
+	void PlayerController::ResetGame()
+	{
+		PlayerModel::playerLives = 3;
+		PlayerModel::playerAmmo = 5;
+		playerModel->SetPlayeScore(0);
 	}
 
 

@@ -11,6 +11,7 @@ namespace Wave
 		FIRSTWAVE,
 		SECONDWAVE,
 		THIRDWAVE,
+		FINISHED,
 	};
 	class WaveService
 	{

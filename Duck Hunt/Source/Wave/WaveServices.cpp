@@ -43,29 +43,52 @@ namespace Wave
 		return clock.getElapsedTime().asSeconds() >= waveTimer;
 	}
 
-	void WaveService::ChangeWave(WaveType wave)
+	void WaveService::SetCurrentWave(WaveType wave)
 	{
 
 		switch (wave)
 		{
+
 		case WaveType::FIRSTWAVE:
 			RestartClock();
-			ServiceLocator::GetInstance()->GetGraphicService()->ChangeWindowColor(sf::Color::Green);
 			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
-			currentWave = WaveType::SECONDWAVE;
-			waveTimer = 20;
-			Player::PlayerModel::playerAmmo = 10;
+			currentWave = WaveType::FIRSTWAVE;
+
+			waveTimer = 5;
+			Player::PlayerModel::playerAmmo = 5;
 			Enemy::EnemyModel::NumberOfEnemies = 8;
-			EnemiesToBeKilled = 8;
+			EnemiesToBeKilled = 2;
+			break;
 
 		case WaveType::SECONDWAVE:
-			ServiceLocator::GetInstance()->GetGraphicService()->ChangeWindowColor(sf::Color::Green);
+			RestartClock();
+			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
+			currentWave = WaveType::SECONDWAVE;
+
+			waveTimer = 8;
+			Player::PlayerModel::playerAmmo = 10;
+			Enemy::EnemyModel::NumberOfEnemies = 8;
+			EnemiesToBeKilled = 2;
+			break;
+
+		case WaveType::THIRDWAVE:
+			RestartClock();
 			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
 			currentWave = WaveType::THIRDWAVE;
-			waveTimer = 30;
+
+			waveTimer = 10;
 			Player::PlayerModel::playerAmmo = 17;
 			Enemy::EnemyModel::NumberOfEnemies = 15;
-			EnemiesToBeKilled = 15;
+			EnemiesToBeKilled = 2;
+			break;
+
+		case WaveType::FINISHED:
+
+			RestartClock();
+			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
+			currentWave = WaveType::FIRSTWAVE;
+
+
 
 		}
 	}
@@ -78,12 +101,6 @@ namespace Wave
 	WaveType WaveService::GetCurrentWave()
 	{
 		return currentWave;
-	}
-
-	void WaveService::SetCurrentWave(WaveType wave)
-	{
-		currentWave = wave;
-
 	}
 
 	void WaveService::RestartClock()
