@@ -17,7 +17,8 @@ namespace Enemy
 		EnemyView* enemyView;
 		EnemyModel* enemyModel;
 		void HandleOutOfBounds();
-
+		MovementDirection currentDirection;
+		sf::Clock directionChangeClock;
 
 
 	public:
@@ -35,5 +36,10 @@ namespace Enemy
 
 		sf::Sprite& GetEnemySprite();
 		EnemyType GetEnemyType();
+
+		void MoveRight(int verticalSpeed, sf::Vector2f position);
+		
+
+		void MoveInDirection(MovementDirection direction, float speed);
 	};
 }

@@ -37,8 +37,7 @@ namespace Enemy
 			float diagonalLeftSpeed = 700.f;
 			float diagonalRightSpeed = 800.f;
 
-			MovementDirection currentDirection;
-			sf::Clock directionChangeClock;
+		
 
 		
 

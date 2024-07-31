@@ -36,198 +36,38 @@ namespace Enemy
 			{
 
 			case MovementDirection::LEFT:
-				MoveLeft();
+				MoveInDirection(MovementDirection::LEFT, verticalSpeed);
 				break;
 
 			case MovementDirection::RIGHT:
-				MoveRight();
+				MoveInDirection(MovementDirection::RIGHT, verticalSpeed);
 				break;
 
 			case MovementDirection::UP:
-				MoveUP();
+				MoveInDirection(MovementDirection::UP, HorizontalSpeed);
 				break;
 
 			case MovementDirection::DOWN:
-				MoveDown();
+				MoveInDirection(MovementDirection::DOWN, HorizontalSpeed);
 				break;
 
 			case MovementDirection::DIAGONAL_LEFT_UP:
-				MoveDiagonalLeftUP();
+				MoveInDirection(MovementDirection::DIAGONAL_LEFT_UP, diagonalLeftSpeed);
 				break;
 
 			case MovementDirection::DIAGONAL_LEFT_DOWN:
-				MoveDiagonalLeftDown();
+				MoveInDirection(MovementDirection::DIAGONAL_LEFT_DOWN, diagonalLeftSpeed);
 				break;
 
 			case MovementDirection::DIAGONAL_RIGHT_UP:
-				MoveDiagonalRightUP();
+				MoveInDirection(MovementDirection::DIAGONAL_RIGHT_UP, diagonalRightSpeed);
 				break;
 
 			case MovementDirection::DIAGONAL_RIGHT_DOWN:
-				MoveDiagonalRightDown();
+				MoveInDirection(MovementDirection::DIAGONAL_RIGHT_DOWN, diagonalRightSpeed);
 				break;
 			}
 		}
-		void RedDuckController::MoveLeft()
-		{
-
-			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
-			CurrentPosition.x -= verticalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-
-			if (enemyModel->GetEnemyPosition().x <= enemyModel->LeftMostPosition.x)
-			{
-				currentDirection = GetRandomMovementDirection();
-				directionChangeClock.restart();
-				//std::cout << "Hit Left Boundary, new direction: " << static_cast<int>(currentDirection) << std::endl;
-			}
-			else
-			{
-				enemyModel->SetEnemyPosition(CurrentPosition);
-			}
-		}
-
-		void RedDuckController::MoveRight()
-		{
-
-			//printf("moveright");
-
-			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
-			CurrentPosition.x += verticalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-
-			if (enemyModel->GetEnemyPosition().x >= enemyModel->RightMostPosition.x)
-			{
-				currentDirection = GetRandomMovementDirection();
-				directionChangeClock.restart();
-				//std::cout << "Hit Right Boundary, new direction: " << static_cast<int>(currentDirection) << std::endl;
-
-
-			}
-			else
-			{
-				enemyModel->SetEnemyPosition(CurrentPosition);
-			}
-
-		}
-
-		void RedDuckController::MoveUP()
-		{
-
-
-			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
-			CurrentPosition.y -= HorizontalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-
-			if (CurrentPosition.y <= enemyModel->TopMostPosition.y)
-			{
-				currentDirection = GetRandomMovementDirection();
-				directionChangeClock.restart();
-				//std::cout << "Hit Right Boundary, new direction: " << static_cast<int>(currentDirection) << std::endl;
-
-
-			}
-			else
-			{
-				enemyModel->SetEnemyPosition(CurrentPosition);
-			}
-		}
-
-		void RedDuckController::MoveDown()
-		{
-			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
-			CurrentPosition.y += HorizontalSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-
-			if (enemyModel->GetEnemyPosition().y >= enemyModel->BottomMostPosition.y)
-			{
-				currentDirection = GetRandomMovementDirection();
-				directionChangeClock.restart();
-
-			}
-			else
-			{
-				enemyModel->SetEnemyPosition(CurrentPosition);
-			}
-		}
-
-		void RedDuckController::MoveDiagonalLeftDown()
-		{
-			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
-
-			CurrentPosition.x -= diagonalLeftSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-			CurrentPosition.y += diagonalLeftSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-
-			if (enemyModel->GetEnemyPosition().y >= enemyModel->BottomMostPosition.y ||
-				enemyModel->GetEnemyPosition().x <= enemyModel->LeftMostPosition.x)
-			{
-				currentDirection = GetRandomMovementDirection();
-				directionChangeClock.restart();
-			}
-			else
-			{
-				enemyModel->SetEnemyPosition(CurrentPosition);
-			}
-		}
-
-		void RedDuckController::MoveDiagonalRightDown()
-		{
-			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
-
-			CurrentPosition.x += diagonalRightSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-			CurrentPosition.y += diagonalRightSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-
-			if (enemyModel->GetEnemyPosition().y >= enemyModel->BottomMostPosition.y ||
-				enemyModel->GetEnemyPosition().x >= enemyModel->RightMostPosition.x)
-			{
-				currentDirection = GetRandomMovementDirection();
-				directionChangeClock.restart();
-
-			}
-			else
-			{
-				enemyModel->SetEnemyPosition(CurrentPosition);
-			}
-		}
-
-		void RedDuckController::MoveDiagonalLeftUP()
-		{
-			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
-
-			CurrentPosition.x -= diagonalLeftSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-			CurrentPosition.y -= diagonalLeftSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-
-			if (enemyModel->GetEnemyPosition().y <= enemyModel->TopMostPosition.y ||
-				enemyModel->GetEnemyPosition().x <= enemyModel->LeftMostPosition.x)
-			{
-				currentDirection = GetRandomMovementDirection();
-				directionChangeClock.restart();
-
-			}
-			else
-			{
-				enemyModel->SetEnemyPosition(CurrentPosition);
-			}
-
-		}
-
-		void RedDuckController::MoveDiagonalRightUP()
-		{
-
-			sf::Vector2f CurrentPosition = enemyModel->GetEnemyPosition();
-
-			CurrentPosition.x += diagonalRightSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-			CurrentPosition.y -= diagonalRightSpeed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
-
-			if (enemyModel->GetEnemyPosition().y <= enemyModel->TopMostPosition.y ||
-				enemyModel->GetEnemyPosition().x >= enemyModel->RightMostPosition.x)
-			{
-				currentDirection = GetRandomMovementDirection();
-				directionChangeClock.restart();
-
-			}
-			else
-			{
-				enemyModel->SetEnemyPosition(CurrentPosition);
-			}
-		}
-
 
 	}
 }

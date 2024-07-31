@@ -13,6 +13,8 @@ namespace Enemy
 	{
 		enemyView = new EnemyView();
 		enemyModel = new EnemyModel(type);
+		std::srand(static_cast<unsigned int>(std::time(nullptr)));
+		currentDirection = GetRandomMovementDirection();
 	}
 
 	EnemyController::~EnemyController()
@@ -61,12 +63,12 @@ namespace Enemy
 	{
 		int randomType = std::rand() % 8;
 		return static_cast<Enemy::MovementDirection>(randomType);
-		
+
 	}
 
 	sf::Sprite& EnemyController::GetEnemySprite()
 	{
-		
+
 		return enemyView->GetEnemySprite();
 	}
 
@@ -74,5 +76,141 @@ namespace Enemy
 	{
 		return enemyModel->GetCurrentEnemyType();
 	}
-	
+
+	void EnemyController::MoveInDirection(MovementDirection direction, float speed)
+	{
+		float deltaTime = ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+		sf::Vector2f currentPosition = enemyModel->GetEnemyPosition();
+
+		switch (direction)
+		{
+		case MovementDirection::LEFT:
+			currentPosition.x -= speed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			if (currentPosition.x <= enemyModel->LeftMostPosition.x)
+			{
+				currentDirection = GetRandomMovementDirection();
+			}
+			else
+			{
+				enemyModel->SetEnemyPosition(currentPosition);
+			}
+			break;
+		case MovementDirection::RIGHT:
+			currentPosition.x += speed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			if (enemyModel->GetEnemyPosition().x >= enemyModel->RightMostPosition.x)
+			{
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+				//std::cout << "Hit Right Boundary, new direction: " << static_cast<int>(currentDirection) << std::endl;
+
+
+			}
+			else
+			{
+				enemyModel->SetEnemyPosition(currentPosition);
+			}
+			break;
+
+		case MovementDirection::UP:
+			currentPosition.y -= speed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			if (currentPosition.y <= enemyModel->TopMostPosition.y)
+			{
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+				//std::cout << "Hit Right Boundary, new direction: " << static_cast<int>(currentDirection) << std::endl;
+
+
+			}
+			else
+			{
+				enemyModel->SetEnemyPosition(currentPosition);
+			}
+			break;
+
+		case MovementDirection::DOWN:
+			currentPosition.y += speed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+
+			if (enemyModel->GetEnemyPosition().y >= enemyModel->BottomMostPosition.y)
+			{
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+
+			}
+			else
+			{
+				enemyModel->SetEnemyPosition(currentPosition);
+			}
+			break;
+
+		case MovementDirection::DIAGONAL_LEFT_UP:
+			currentPosition.x -= speed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			currentPosition.y -= speed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+
+			if (enemyModel->GetEnemyPosition().y <= enemyModel->TopMostPosition.y ||
+				enemyModel->GetEnemyPosition().x <= enemyModel->LeftMostPosition.x)
+			{
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+
+			}
+			else
+			{
+				enemyModel->SetEnemyPosition(currentPosition);
+			}
+			
+
+			break;
+		case MovementDirection::DIAGONAL_LEFT_DOWN:
+			currentPosition.x -= speed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			currentPosition.y += speed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+
+			if (enemyModel->GetEnemyPosition().y >= enemyModel->BottomMostPosition.y ||
+				enemyModel->GetEnemyPosition().x <= enemyModel->LeftMostPosition.x)
+			{
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+			}
+			else
+			{
+				enemyModel->SetEnemyPosition(currentPosition);
+			}
+
+			break;
+		case MovementDirection::DIAGONAL_RIGHT_UP:
+
+			currentPosition.x += speed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			currentPosition.y -= speed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+
+			if (enemyModel->GetEnemyPosition().y <= enemyModel->TopMostPosition.y ||
+				enemyModel->GetEnemyPosition().x >= enemyModel->RightMostPosition.x)
+			{
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+
+			}
+			else
+			{
+				enemyModel->SetEnemyPosition(currentPosition);
+			}
+			break;
+		case MovementDirection::DIAGONAL_RIGHT_DOWN:
+
+			currentPosition.x += speed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+			currentPosition.y += speed * ServiceLocator::GetInstance()->GetTimeService()->GetDeltaTime();
+
+			if (enemyModel->GetEnemyPosition().y >= enemyModel->BottomMostPosition.y ||
+				enemyModel->GetEnemyPosition().x >= enemyModel->RightMostPosition.x)
+			{
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+
+			}
+			else
+			{
+				enemyModel->SetEnemyPosition(currentPosition);
+			}
+			break;
+		}
+
+	}
 }
