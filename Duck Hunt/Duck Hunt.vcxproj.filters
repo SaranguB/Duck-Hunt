@@ -81,7 +81,7 @@
     <ClCompile Include="Source\Sound\SoundService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Enemy\Controller\RedDuckController.cpp">
+    <ClCompile Include="RedDuckController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
