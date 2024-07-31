@@ -24,7 +24,7 @@ namespace UI
 			~ImageView();
 
 			void Initialize(sf::String texturePath, float imageWidth, float imageHeight, sf::Vector2f position);
-			void Update();
+			
 			void Render();
 
 			void SetTexture(sf::String texturePath);

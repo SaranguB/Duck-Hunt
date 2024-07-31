@@ -72,9 +72,6 @@ namespace Global
 		gameplayService->Update();
 		playerService->Update();
 
-
-
-
 	}
 	void ServiceLocator::Render()
 	{

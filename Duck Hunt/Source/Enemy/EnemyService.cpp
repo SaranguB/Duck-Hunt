@@ -107,8 +107,6 @@ namespace Enemy
 				{
 					ServiceLocator::GetInstance()->GetPlayerService()->SetCurrentStatus(Player::PlayerStatus::WON);
 
-					/*WaveType currentWave = ServiceLocator::GetInstance()->GetWaveService()->GetCurrentWave();
-					ServiceLocator::GetInstance()->GetWaveService()->ChangeWave(currentWave);*/
 				}
 
 			}
@@ -116,7 +114,6 @@ namespace Enemy
 			if (EnemyModel::enemyCount < EnemyModel::NumberOfEnemies)
 			{
 				
-
 				SpawnEnemy();
 				spawnTimer = 0;
 			}

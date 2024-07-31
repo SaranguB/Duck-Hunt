@@ -17,15 +17,15 @@ namespace Enemy
 		~EnemyModel();
 
 		void Initialize();
-		
+
 
 		sf::Vector2f GetEnemyPosition();
 		void SetEnemyPosition(sf::Vector2f position);
 
-		const sf::Vector2f LeftMostPosition = sf::Vector2f(50.f, 50.f);
-		const sf::Vector2f RightMostPosition = sf::Vector2f(1800.f, 50.f);
-		const sf::Vector2f TopMostPosition = sf::Vector2f(960.f, 0.f);
-		const sf::Vector2f BottomMostPosition = sf::Vector2f(950.f,880.f);
+		float LeftMostPosition = 50.f;
+		float RightMostPosition = 1800.f;
+		float TopMostPosition = 0.f;
+		float BottomMostPosition = 880.f;
 
 		EnemyType currentEnemyType;
 		EnemyType GetCurrentEnemyType();
@@ -35,6 +35,6 @@ namespace Enemy
 		static int enemyCount;
 
 
-		
+
 	};
 }

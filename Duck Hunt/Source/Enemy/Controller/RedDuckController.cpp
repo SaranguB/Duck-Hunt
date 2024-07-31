@@ -26,11 +26,7 @@ namespace Enemy
 
 		void Enemy::Controller::RedDuckController::Move()
 		{
-			if (directionChangeClock.getElapsedTime().asSeconds() >= 1.0f)
-			{
-				currentDirection = GetRandomMovementDirection();
-				directionChangeClock.restart();
-			}
+			
 
 			switch (currentDirection)
 			{
@@ -71,5 +67,4 @@ namespace Enemy
 
 	}
 }
-
 

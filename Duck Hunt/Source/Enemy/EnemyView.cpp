@@ -17,7 +17,7 @@ namespace Enemy
 
 	EnemyView::~EnemyView()
 	{
-		
+		delete(enemyImage);
 	}
 
 	void EnemyView::Initialize(EnemyController* controller)

@@ -13,16 +13,6 @@ namespace Enemy
 		{
 		private:
 
-
-			void MoveLeft();
-			void MoveRight();
-			void MoveUP();
-			void MoveDown();
-			void MoveDiagonalLeftUP();
-			void MoveDiagonalRightUP();
-			void MoveDiagonalRightDown();
-			void MoveDiagonalLeftDown();
-
 		public:
 			RedDuckController(EnemyType type);
 			~RedDuckController() override;

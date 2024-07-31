@@ -34,12 +34,12 @@ namespace UI
 			TextView();
 			~TextView();
 
-			static void InitializeTextView();
+			
 
 			void Initialize(sf::String textValue, sf::Vector2f position,
 				FontType fontType = FontType::BUBBLE_BOBBLE, int fontSize = defualtFontSize,
 				sf::Color color = sf::Color::White);
-			void Update();
+		
 			void Render();
 
 			void setText(sf::String textValue);

@@ -25,7 +25,7 @@ namespace Wave
 		~WaveService();
 
 		void Initialize();
-		void Update();
+	
 
 		void ResetTime();
 

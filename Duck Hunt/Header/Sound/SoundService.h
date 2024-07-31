@@ -33,7 +33,7 @@ namespace Sound
 
 		void Initialize();
 
-		void PlayBackgroundMusic();
+		
 		void PlaySound(SoundType soundType);
 	};
 }

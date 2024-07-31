@@ -81,7 +81,7 @@
     <ClCompile Include="Source\Sound\SoundService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RedDuckController.cpp">
+    <ClCompile Include="Source\Enemy\Controller\RedDuckController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -149,10 +149,10 @@
     <ClInclude Include="Header\Wave\WaveServices.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Enemy\Controller\RedDuckController.h">
+    <ClInclude Include="Header\Sound\SoundService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Sound\SoundService.h">
+    <ClInclude Include="Header\Enemy\Controller\RedDuckController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

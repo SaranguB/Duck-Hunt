@@ -33,10 +33,6 @@ namespace Player
 		if (PlayerModel::playerAmmo > 0)
 			ProcessPlayerInput();
 
-
-
-
-
 	}
 
 	void PlayerController::ProcessPlayerInput()

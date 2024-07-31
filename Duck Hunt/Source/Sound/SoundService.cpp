@@ -22,19 +22,19 @@ namespace Sound
 			printf("Error Loading Sound Effect");
 
 		}
-		
+
 		if (!bufferFailed.loadFromFile(Config::Failing_path))
 		{
 			printf("Error Loading Sound Effect");
 
 		}
-		
+
 		if (!bufferWon.loadFromFile(Config::Winning_path))
 		{
 			printf("Error Loading Sound Effect");
 
 		}
-		
+
 	}
 
 	void SoundService::PlaySound(SoundType soundType)
@@ -46,19 +46,19 @@ namespace Sound
 			soundEffect.setBuffer(bufferDuck);
 			break;
 
-			case SoundType::START_MUSIC:
-				soundEffect.setBuffer(buffeStart);
-				break;
+		case SoundType::START_MUSIC:
+			soundEffect.setBuffer(buffeStart);
+			break;
 
-			case SoundType::FAIL_SOUND:
+		case SoundType::FAIL_SOUND:
 
-				soundEffect.setBuffer(bufferFailed);
-				break;
+			soundEffect.setBuffer(bufferFailed);
+			break;
 
-			case SoundType::WON_SOUND:
+		case SoundType::WON_SOUND:
 
-				soundEffect.setBuffer(bufferWon);
-				break;
+			soundEffect.setBuffer(bufferWon);
+			break;
 
 		default:
 			printf("Invalid Sound");

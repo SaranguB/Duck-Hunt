@@ -82,8 +82,6 @@ namespace Wave
 			ServiceLocator::GetInstance()->GetPlayerService()->ResetGame();
 			currentWave = WaveType::FIRSTWAVE;
 
-
-
 		}
 	}
 

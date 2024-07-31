@@ -30,12 +30,7 @@ namespace Enemy
 
 		void GreenDuckController::Move()
 		{
-			if (directionChangeClock.getElapsedTime().asSeconds() >= 1.0f)
-			{
-				currentDirection = GetRandomMovementDirection();
-				directionChangeClock.restart();
-			}
-
+	
 			switch (currentDirection)
 			{
 
@@ -75,62 +70,7 @@ namespace Enemy
 		}
 
 		
-		/*void GreenDuckController::MoveLeft()
-		{
-			
-			MoveInDirection(MovementDirection::LEFT, verticalSpeed);
-
-		}
-
-		void GreenDuckController::MoveRight()
-		{
-			MoveInDirection(MovementDirection::RIGHT, verticalSpeed);
-
-
-		}
-
-		void GreenDuckController::MoveUP()
-		{
-			
-
-			MoveInDirection(MovementDirection::UP, HorizontalSpeed);
-
-		}
-
-		void GreenDuckController::MoveDown()
-		{
-			MoveInDirection(MovementDirection::DOWN, HorizontalSpeed);
-
-		}
-
-		void GreenDuckController::MoveDiagonalLeftDown()
-		{
-			MoveInDirection(MovementDirection::DIAGONAL_LEFT_DOWN, diagonalLeftSpeed);
-
-		}
-
-		void GreenDuckController::MoveDiagonalRightDown()
-		{
-			MoveInDirection(MovementDirection::DIAGONAL_RIGHT_DOWN, diagonalRightSpeed);
-
-		}
-
-		void GreenDuckController::MoveDiagonalLeftUP()
-		{
-			MoveInDirection(MovementDirection::DIAGONAL_LEFT_UP, diagonalLeftSpeed);
-
-		}
-
-		void GreenDuckController::MoveDiagonalRightUP()
-		{
-			
-			MoveInDirection(MovementDirection::DIAGONAL_RIGHT_UP, diagonalRightSpeed);
-
-			
-		}
-
 		
-*/
 
 
 	}
