@@ -18,10 +18,8 @@ namespace Enemy
 			
 		}
 
-		GreenDuckController::~GreenDuckController()
-		{
-
-		}
+		GreenDuckController::~GreenDuckController() = default;
+		
 
 
 		void GreenDuckController::Initialize()
