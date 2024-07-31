@@ -10,7 +10,7 @@ namespace Gameplay
 
 	GameplayController::~GameplayController()
 	{
-
+		delete(gameplayView);
 	}
 
 	void GameplayController::Initialize()

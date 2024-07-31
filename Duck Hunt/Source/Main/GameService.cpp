@@ -12,10 +12,8 @@ namespace Main
 		serviceLocator = nullptr;
 	}
 
-	GameService::~GameService()
-	{
-		
-	}
+	GameService::~GameService() = default;
+	
 
 	void GameService::Ignite()
 	{

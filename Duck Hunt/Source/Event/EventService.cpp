@@ -10,10 +10,8 @@ namespace Event
 		leftMouseButtonState = ButtonState::RELEASED;
 		gameWindow = nullptr;
 	}
-	EventService::~EventService()
-	{
-		//delete(gameWindow);
-	}
+	EventService::~EventService() = default;
+	
 
 	void EventService::Initialize()
 	{

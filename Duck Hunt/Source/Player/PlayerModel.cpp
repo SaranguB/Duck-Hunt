@@ -5,15 +5,14 @@ namespace Player
 	int PlayerModel::playerAmmo = 0;
 	int PlayerModel::playerLives = 3;
 
-	PlayerModel::PlayerModel()
-	{
-		playerAmmo = maxPlayerAmmo;
-	}
-	PlayerModel::~PlayerModel()
-	{
-	}
+	PlayerModel::PlayerModel() = default;
+	
+	PlayerModel::~PlayerModel() = default;
+
+	
 	void PlayerModel::Initialize()
 	{
+		playerAmmo = maxPlayerAmmo;
 	}
 
 

@@ -40,15 +40,6 @@ namespace Graphics
 		delete(videoMod);
 	}
 
-	void GraphicService::Update()
-	{
-
-	}
-
-	void GraphicService::Render()
-	{
-	}
-
 	bool GraphicService::IsGameWindowOpen()
 	{
 		return gameWindow->isOpen();

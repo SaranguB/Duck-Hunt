@@ -28,8 +28,7 @@ namespace Graphics
 		~GraphicService();
 
 		void Initialize();
-		void Update();
-		void Render();
+	
 
 		bool IsGameWindowOpen();
 

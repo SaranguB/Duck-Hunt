@@ -11,9 +11,8 @@ namespace UI
 		sf::Font TextView::fontBubbleBobble;
 		sf::Font TextView::fontDSDIGIB;
 
-		TextView::TextView()
-		{
-		}
+		TextView::TextView() = default;
+		
 
 
 		TextView::~TextView() = default;
@@ -31,9 +30,7 @@ namespace UI
 
 		}
 
-		void TextView::Update()
-		{
-		}
+		
 
 		void TextView::Render()
 		{

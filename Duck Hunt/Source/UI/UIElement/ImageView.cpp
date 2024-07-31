@@ -9,13 +9,11 @@ namespace UI
 		
 		using namespace Global;
 
-		ImageView::ImageView()
-		{
-		}
+		ImageView::ImageView() = default;
+		
 
-		ImageView::~ImageView()
-		{
-		}
+		ImageView::~ImageView() = default;
+		
 
 		void ImageView::Initialize(sf::String texturePath, float imageWidth, float imageHeight, sf::Vector2f position)
 		{
@@ -27,10 +25,6 @@ namespace UI
 
 		}
 
-		void ImageView::Update()
-		{
-
-		}
 		
 		void ImageView::SetTexture(sf::String texturePath)
 		{

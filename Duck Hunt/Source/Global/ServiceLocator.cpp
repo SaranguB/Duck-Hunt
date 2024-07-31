@@ -68,7 +68,6 @@ namespace Global
 	{
 		eventService->Update();
 		timeService->Update();
-		waveService->Update();
 		enemyService->Update();
 		gameplayService->Update();
 		playerService->Update();

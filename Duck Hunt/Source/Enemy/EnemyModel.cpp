@@ -13,10 +13,8 @@ namespace Enemy
 		currentEnemyType = type;
 	}
 
-	EnemyModel::~EnemyModel()
-	{
-
-	}
+	EnemyModel::~EnemyModel() = default;
+	
 	void EnemyModel::Initialize()
 	{
 		enemyPosition = referencePosition;

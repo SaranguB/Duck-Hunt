@@ -17,6 +17,7 @@ namespace Enemy
 
 	EnemyView::~EnemyView()
 	{
+		
 	}
 
 	void EnemyView::Initialize(EnemyController* controller)
@@ -36,7 +37,7 @@ namespace Enemy
 	void EnemyView::Update()
 	{
 		enemyImage->SetPosition(enemyController->GetEnemyPosition());
-		enemyImage->Update();
+		
 
 	}
 

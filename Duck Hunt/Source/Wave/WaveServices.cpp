@@ -10,14 +10,11 @@ namespace Wave
 	using namespace Player;
 	using namespace Global;
 
-	WaveService::WaveService()
-	{
+	WaveService::WaveService() = default;
+	
 
-	}
-
-	WaveService::~WaveService()
-	{
-	}
+	WaveService::~WaveService() = default;
+	
 
 	void WaveService::Initialize()
 	{
@@ -25,10 +22,6 @@ namespace Wave
 		EnemiesToBeKilled = 2;
 	}
 
-	void WaveService::Update()
-	{
-
-	}
 
 	void WaveService::ResetTime()
 	{

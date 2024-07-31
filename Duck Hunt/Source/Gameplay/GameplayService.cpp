@@ -11,7 +11,7 @@ namespace Gameplay
 
 	GameplayService::~GameplayService()
 	{
-
+		delete(gameplayController);
 	}
 
 	void GameplayService::Initialize()

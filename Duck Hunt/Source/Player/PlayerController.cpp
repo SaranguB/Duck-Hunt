@@ -15,6 +15,7 @@ namespace Player
 
 	PlayerController::~PlayerController()
 	{
+		delete(playerModel);
 	}
 	void PlayerController::Initialize()
 	{

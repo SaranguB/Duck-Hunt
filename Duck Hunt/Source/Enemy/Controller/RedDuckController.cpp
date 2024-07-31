@@ -15,9 +15,9 @@ namespace Enemy
 			currentDirection = GetRandomMovementDirection();
 		}
 
-		RedDuckController::~RedDuckController()
-		{
-		}
+		RedDuckController::~RedDuckController() =  default;
+
+		
 		void RedDuckController::Initialize()
 		{
 			EnemyController::Initialize();
