@@ -62,8 +62,6 @@ namespace Enemy
 
 			return Config::Red_Duck_Enemy;
 
-
-
 		}
 	}
 }

@@ -58,9 +58,9 @@ namespace Enemy
 		{
 
 		case EnemyType::GREEN_DUCK:
-			return new GreenDuckController(EnemyType::GREEN_DUCK);
+			return new GreenDuckController();
 		case EnemyType::RED_DUCK:
-			return new GreenDuckController(EnemyType::RED_DUCK);
+			return new RedDuckController();
 		}
 
 	}

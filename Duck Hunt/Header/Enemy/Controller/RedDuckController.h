@@ -14,7 +14,7 @@ namespace Enemy
 		private:
 
 		public:
-			RedDuckController(EnemyType type);
+			RedDuckController();
 			~RedDuckController() override;
 
 

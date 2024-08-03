@@ -25,7 +25,6 @@ namespace Enemy
 		void UpdateSpawnTimer();
 		void SpawnEnemy();
 		void ProcessSpawnEnemy();
-		void DestroyEnemy(EnemyController* controller);
 
 		void Destroy();
 
@@ -43,6 +42,8 @@ namespace Enemy
 
 		bool DestroyEnemyAtMousePosition(sf::Vector2f mousePosition);
 		void DestroyFlaggedEnemyList();
+		void DestroyEnemy(EnemyController* controller);
+
 
 		
 

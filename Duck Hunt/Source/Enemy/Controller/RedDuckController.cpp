@@ -9,7 +9,7 @@ namespace Enemy
 	{
 		using namespace Global;
 
-		RedDuckController::RedDuckController(EnemyType type) : EnemyController(type)
+		RedDuckController::RedDuckController() : EnemyController(EnemyType::RED_DUCK)
 		{
 			std::srand(static_cast<unsigned int>(std::time(nullptr)));
 			currentDirection = GetRandomMovementDirection();

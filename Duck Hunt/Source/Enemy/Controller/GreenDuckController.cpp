@@ -11,7 +11,7 @@ namespace Enemy
 		using namespace Global;
 
 
-		GreenDuckController::GreenDuckController(EnemyType type) : EnemyController(type)
+		GreenDuckController::GreenDuckController() : EnemyController(EnemyType::GREEN_DUCK)
 		{
 			std::srand(static_cast<unsigned int>(std::time(nullptr)));
 			currentDirection = GetRandomMovementDirection();

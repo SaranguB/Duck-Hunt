@@ -13,7 +13,7 @@ namespace Enemy
 		private:
 
 		public:
-			GreenDuckController(EnemyType type);
+			GreenDuckController();
 			~GreenDuckController() override;
 
 

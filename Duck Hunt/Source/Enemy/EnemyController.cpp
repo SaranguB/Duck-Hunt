@@ -44,6 +44,7 @@ namespace Enemy
 		if (enemyPosition.x<0 || enemyPosition.x >windowSize.x ||
 			enemyPosition.y<0 || enemyPosition.y >windowSize.y)
 		{
+			ServiceLocator::GetInstance()->GetEnemyService()->DestroyEnemy(this);
 
 		}
 
