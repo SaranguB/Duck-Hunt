@@ -38,10 +38,6 @@ namespace Gameplay
 		InitializePlayerAmmo();
 		InitializePlayerScore();
 		InitializePlayerLive();
-
-
-
-	
 	}
 
 	void GameplayView::Update()
