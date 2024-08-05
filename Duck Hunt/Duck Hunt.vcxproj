@@ -136,6 +136,7 @@
     <ClCompile Include="Source\Enemy\Controller\RedDuckController.cpp" />
     <ClCompile Include="Source\Sound\SoundService.cpp" />
     <ClCompile Include="Source\UI\UIElement\TextView.cpp" />
+    <ClCompile Include="Source\UI\WaveUI\WaveUIController.cpp" />
     <ClCompile Include="Source\Wave\WaveServices.cpp" />
     <ClCompile Include="Source\Enemy\Controller\GreenDuckController.cpp" />
     <ClCompile Include="Source\Enemy\EnemyService.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="Header\UI\UIElement\UIView.h" />
     <ClInclude Include="Header\UI\UIService.h" />
     <ClInclude Include="Header\Wave\WaveServices.h" />
+    <ClInclude Include="Header\UI\WaveUI\WaveUIController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
