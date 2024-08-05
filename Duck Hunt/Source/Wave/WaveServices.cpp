@@ -83,6 +83,7 @@ namespace Wave
 			currentWave = WaveType::FIRSTWAVE;
 
 		}
+
 	}
 
 	int WaveService::GetEnemiesToBeKilled()
