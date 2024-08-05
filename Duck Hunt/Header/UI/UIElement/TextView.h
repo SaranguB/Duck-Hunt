@@ -1,5 +1,6 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include "../../Header/UI/UIElement/UIView.h"
+
 
 namespace UI
 {
@@ -7,14 +8,12 @@ namespace UI
 	{
 		enum class FontType
 		{
-
 			BUBBLE_BOBBLE,
 			DS_DIGIB,
 		};
-		class TextView
+		class TextView : public UIView
 		{
-		private:
-			sf::RenderWindow* gameWindow;
+		private:	
 			static const int defualtFontSize = 55;
 
 			static sf::Font fontBubbleBobble;

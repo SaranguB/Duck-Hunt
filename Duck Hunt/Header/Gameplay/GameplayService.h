@@ -2,11 +2,6 @@
 
 namespace Gameplay
 {
-	enum class UIType
-	{
-		GAMEPLAY,
-		STAT,
-	};
 
 	class GameplayController;
 
@@ -15,7 +10,6 @@ namespace Gameplay
 
 	private:
 		GameplayController* gameplayController;
-		UIType uiType;
 
 
 	public:
@@ -26,7 +20,6 @@ namespace Gameplay
 		void Update();
 		void Render();
 
-		UIType GetUIType();
-		UIType SetUIType();
+		
 	};
 }

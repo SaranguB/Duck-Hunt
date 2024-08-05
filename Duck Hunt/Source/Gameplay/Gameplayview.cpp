@@ -14,19 +14,13 @@ namespace Gameplay
 	GameplayView::GameplayView()
 	{
 		gameplayImage = new ImageView();
-		enemiesKilledText = new TextView();
-		playerAmmo = new TextView();
-		playerScore = new TextView();
-		playerLive = new TextView();
+		
 	}
 
 	GameplayView::~GameplayView()
 	{
 		delete(gameplayImage);
-		delete(enemiesKilledText);
-		delete(playerAmmo);
-		delete(playerScore);
-		delete(playerLive);
+		
 
 	}
 
@@ -34,27 +28,17 @@ namespace Gameplay
 	{
 
 		InitializeBackgroundImage();
-		InitializeEnemiesKilledText();
-		InitializePlayerAmmo();
-		InitializePlayerScore();
-		InitializePlayerLive();
 	}
 
 	void GameplayView::Update()
 	{
+		gameplayImage->Update();
 		
-		UpdateEnemiesKilledText();
-		UpdatePlayerAmmoText();
-		UpdatePlayerScore();
-		UpdatePlayerLive();
 	}
 	void GameplayView::Render()
 	{
 		gameplayImage->Render();
-		enemiesKilledText->Render();
-		playerAmmo->Render();
-		playerScore->Render();
-		playerLive->Render();
+		
 	}
 
 	void GameplayView::UpdateEnemiesKilledText()

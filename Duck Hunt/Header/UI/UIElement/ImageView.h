@@ -1,15 +1,13 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include "../../Header/UI/UIElement/UIView.h"
 
 namespace UI
 {
 	namespace UIElement
 	{
-		class ImageView
+		class ImageView : public UIView
 		{
 		private:
-
-			sf::RenderWindow* gameWindow;
 
 			sf::Texture imageTexture;
 			sf::Sprite imageSprite;

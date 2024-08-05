@@ -7,7 +7,7 @@ namespace Gameplay
 	GameplayService::GameplayService()
 	{
 		gameplayController = new GameplayController();
-		uiType = UIType::STAT;
+		
 	}
 
 	GameplayService::~GameplayService()
@@ -27,4 +27,5 @@ namespace Gameplay
 	{
 		gameplayController->Render();
 	}
+
 }
