@@ -2,7 +2,7 @@
 #include "../../Header/UI/Interface/IUIcontroller.h"
 #include "../../Header/UI/GameplayUI/GameplayUIController.h"
 #include "../../Header/UI/WaveUI/WaveUIController.h"
-
+#include "../../Header/UI/EndscreenUI/EndscreenUIController.h"
 
 namespace UI
 {
@@ -11,6 +11,7 @@ namespace UI
 	private:
 		GameplayUI::GameplayUIController* gameplayUIController;
 		WaveUI::WaveUIController* waveUIController;
+		EndscreenUI::EndscreenUIController* endscreenUIController;
 
 
 		void CreateController();

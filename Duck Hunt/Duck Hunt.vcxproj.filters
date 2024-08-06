@@ -96,6 +96,9 @@
     <ClCompile Include="Source\UI\WaveUI\WaveUIController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\UI\EndscreenUI\EndscreenUIController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Global\ServiceLocator.h">
@@ -180,6 +183,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Header\UI\WaveUI\WaveUIController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\UI\EndscreenUI\EndscreenUIController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

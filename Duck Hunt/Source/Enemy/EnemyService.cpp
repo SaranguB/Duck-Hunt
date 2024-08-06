@@ -18,6 +18,8 @@ namespace Enemy
 
 	EnemyService::EnemyService()
 	{
+		std::srand(static_cast<unsigned int>(std::time(nullptr)));
+
 		wave = new WaveService();
 		for (int i = 0;i < enemyList.size();i++)
 		{
@@ -81,6 +83,9 @@ namespace Enemy
 		{
 			enemyList[i]->Update();
 
+			if (enemyList[i]->CurrentEnemyState == EnemyState::DEAD)
+				DestroyEnemy(enemyList[i]);
+
 		}
 		DestroyFlaggedEnemyList();
 	}
@@ -103,9 +108,11 @@ namespace Enemy
 					Reset();
 					spawnTimer = 0;
 				}
-				else
+				else if (EnemyModel::enemiesKilled >= ServiceLocator::GetInstance()->GetWaveService()->GetEnemiesToBeKilled())
 				{
+					
 					ServiceLocator::GetInstance()->GetPlayerService()->SetCurrentStatus(Player::PlayerStatus::WON);
+					Reset();
 
 				}
 
@@ -145,7 +152,7 @@ namespace Enemy
 				Enemy::EnemyModel::enemiesKilled++;
 
 				IncreaseScore(enemyList[i]);
-				DestroyEnemy(enemyList[i]);
+				enemyList[i]->SetEnemyState(EnemyState::FALLING);
 
 				return true;
 				break;
@@ -161,6 +168,10 @@ namespace Enemy
 		enemyList.erase(std::remove(enemyList.begin(), enemyList.end(), controller), enemyList.end());
 	}
 
+	void EnemyService::KillEnemy(EnemyController* controller)
+	{
+
+	}
 
 	void EnemyService::Reset()
 	{

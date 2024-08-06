@@ -5,6 +5,8 @@
 
 namespace Enemy
 {
+	
+
 	enum class EnemyType;
 	class EnemyController;
 	
@@ -43,6 +45,9 @@ namespace Enemy
 		bool DestroyEnemyAtMousePosition(sf::Vector2f mousePosition);
 		void DestroyFlaggedEnemyList();
 		void DestroyEnemy(EnemyController* controller);
+
+		void KillEnemy(EnemyController* controller);
+		
 
 
 		

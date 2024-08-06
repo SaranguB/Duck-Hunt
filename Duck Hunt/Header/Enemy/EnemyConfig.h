@@ -14,6 +14,7 @@ namespace Enemy
 		DIAGONAL_RIGHT_DOWN,
 	};
 
+
 	enum class EnemyType
 	{
 		GREEN_DUCK,
@@ -21,7 +22,8 @@ namespace Enemy
 	};
 	enum class EnemyState
 	{
+		ALIVE,
+		FALLING,
 		DEAD,
-		PATROLLING,
 	};
 }

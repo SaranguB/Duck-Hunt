@@ -11,6 +11,7 @@ namespace UI
 	using namespace UIElement;
 	using namespace GameplayUI;
 	using namespace WaveUI;
+	using namespace EndscreenUI;
 
 	UIService::UIService()
 	{
@@ -21,12 +22,14 @@ namespace UI
 	{
 		delete(gameplayUIController);
 		delete(waveUIController);
+		delete(endscreenUIController);
 	}
 
 	void UIService::CreateController()
 	{
 		gameplayUIController = new GameplayUIController();
 		waveUIController = new WaveUIController();
+		endscreenUIController = new EndscreenUIController();
 	}
 
 	void UIService::Initialize()
@@ -38,6 +41,7 @@ namespace UI
 	{
 		gameplayUIController->Initialize();
 		waveUIController->Initialize();
+		endscreenUIController->Initialize();
 	}
 
 	void UIService::update()
@@ -66,6 +70,9 @@ namespace UI
 		case GameState::WAVE:
 			return waveUIController;
 
+		case GameState::CREDITS:
+			return endscreenUIController;
+				
 		default:
 			return nullptr;
 		}

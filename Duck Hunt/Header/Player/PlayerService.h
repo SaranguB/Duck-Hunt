@@ -8,6 +8,8 @@ namespace Player
 		WON,
 		FAILED,
 		STATIC,
+		GAME_WON,
+		GAME_OVER,
 	};
 	class PlayerService
 	{
@@ -35,5 +37,7 @@ namespace Player
 
 		void DecreasePlayerLive();
 		void ResetGame();
+
+		
 	};
 }

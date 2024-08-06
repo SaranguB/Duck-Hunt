@@ -13,8 +13,10 @@ namespace Enemy
 	{
 		enemyView = new EnemyView();
 		enemyModel = new EnemyModel(type);
-		std::srand(static_cast<unsigned int>(std::time(nullptr)));
+
 		currentDirection = GetRandomMovementDirection();
+
+		CurrentEnemyState = EnemyState::ALIVE;
 	}
 
 	EnemyController::~EnemyController()
@@ -90,60 +92,79 @@ namespace Enemy
 			directionChangeClock.restart();
 		}
 
-
-		switch (direction)
+		if (CurrentEnemyState == EnemyState::ALIVE)
 		{
-		case MovementDirection::LEFT:
-			currentPosition.x -= finalSpeed;
-			
-			break;
-		case MovementDirection::RIGHT:
-			currentPosition.x += finalSpeed;
-			break;
+			switch (direction)
+			{
+			case MovementDirection::LEFT:
+				currentPosition.x -= finalSpeed;
 
-		case MovementDirection::UP:
-			currentPosition.y -= finalSpeed;
-			break;
+				break;
+			case MovementDirection::RIGHT:
+				currentPosition.x += finalSpeed;
+				break;
 
-		case MovementDirection::DOWN:
-			currentPosition.y += finalSpeed;
-			break;
+			case MovementDirection::UP:
+				currentPosition.y -= finalSpeed;
+				break;
 
-		case MovementDirection::DIAGONAL_LEFT_UP:
-			currentPosition.x -= finalSpeed;
-			currentPosition.y -= finalSpeed;
-			break;
-		case MovementDirection::DIAGONAL_LEFT_DOWN:
-			currentPosition.x -= finalSpeed;
-			currentPosition.y += finalSpeed;
-			break;
-		case MovementDirection::DIAGONAL_RIGHT_UP:
+			case MovementDirection::DOWN:
+				currentPosition.y += finalSpeed;
+				break;
 
-			currentPosition.x += speed * finalSpeed;
-			currentPosition.y -= speed * finalSpeed;
+			case MovementDirection::DIAGONAL_LEFT_UP:
+				currentPosition.x -= finalSpeed;
+				currentPosition.y -= finalSpeed;
+				break;
+			case MovementDirection::DIAGONAL_LEFT_DOWN:
+				currentPosition.x -= finalSpeed;
+				currentPosition.y += finalSpeed;
+				break;
+			case MovementDirection::DIAGONAL_RIGHT_UP:
 
-			
-			break;
-		case MovementDirection::DIAGONAL_RIGHT_DOWN:
+				currentPosition.x += finalSpeed;
+				currentPosition.y -= finalSpeed;
 
-			currentPosition.x += speed * finalSpeed;
-			currentPosition.y += speed * finalSpeed;
 
-			break;
+				break;
+			case MovementDirection::DIAGONAL_RIGHT_DOWN:
+
+				currentPosition.x += finalSpeed;
+				currentPosition.y += finalSpeed;
+
+				break;
+			}
+
+			if (currentPosition.y >= enemyModel->BottomMostPosition ||
+				currentPosition.x <= enemyModel->LeftMostPosition ||
+				currentPosition.y <= enemyModel->TopMostPosition ||
+				currentPosition.x >= enemyModel->RightMostPosition)
+			{
+				currentDirection = GetRandomMovementDirection();
+				directionChangeClock.restart();
+			}
+			else
+			{
+				enemyModel->SetEnemyPosition(currentPosition);
+			}
 		}
-
-		if (currentPosition.y >= enemyModel->BottomMostPosition ||
-			currentPosition.x <= enemyModel->LeftMostPosition||
-			currentPosition.y <= enemyModel->TopMostPosition ||
-			currentPosition.x >= enemyModel->RightMostPosition)
+		else if (CurrentEnemyState == EnemyState::FALLING)
 		{
-			currentDirection = GetRandomMovementDirection();
-			directionChangeClock.restart();
-		}
-		else
-		{
+			currentPosition.y += deadSpeed * deltaTime;
 			enemyModel->SetEnemyPosition(currentPosition);
+
+			if (currentPosition.y >= enemyModel->BottomMostPosition)
+				CurrentEnemyState = EnemyState::DEAD;
 		}
 
+	}
+
+	EnemyState EnemyController::GetCurrentEnemyState()
+	{
+		return CurrentEnemyState;
+	}
+	void EnemyController::SetEnemyState(EnemyState state)
+	{
+		CurrentEnemyState = state;
 	}
 }

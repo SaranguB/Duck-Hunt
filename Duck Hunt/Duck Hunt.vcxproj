@@ -130,6 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\UI\EndscreenUI\EndscreenUIController.cpp" />
     <ClCompile Include="Source\UI\GameplayerUI\GameplayUIController.cpp" />
     <ClCompile Include="Source\UI\UIElement\UIView.cpp" />
     <ClCompile Include="Source\UI\UIService.cpp" />
@@ -179,6 +180,7 @@
     <ClInclude Include="Header\Player\PlayerService.h" />
     <ClInclude Include="Header\Sound\SoundService.h" />
     <ClInclude Include="Header\Time\TimeService.h" />
+    <ClInclude Include="Header\UI\EndscreenUI\EndscreenUIController.h" />
     <ClInclude Include="Header\UI\GameplayUI\GameplayUIController.h" />
     <ClInclude Include="Header\UI\Interface\IUIController.h" />
     <ClInclude Include="Header\UI\UIElement\ImageView.h" />
