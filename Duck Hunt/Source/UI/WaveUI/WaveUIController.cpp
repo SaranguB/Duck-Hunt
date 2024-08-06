@@ -57,7 +57,7 @@ namespace UI
 				waveText->setText("wave 3");
 				break;
 			}
-			setTextcentreAligned();
+			waveText->SetTextPosition(GetTextcentreAligned());
 		}
 
 		sf::String WaveUIController::CurrentWaveText()
@@ -68,7 +68,7 @@ namespace UI
 		void WaveUIController::Show()
 		{
 		}
-		void WaveUIController::setTextcentreAligned()
+		sf::Vector2f WaveUIController::GetTextcentreAligned()
 		{
 			gameWindow = ServiceLocator::GetInstance()->GetGraphicService()->GetGameWIndow();
 
@@ -77,7 +77,7 @@ namespace UI
 			float xPosition = (gameWindow->getSize().x - textBounds.width) / 2;
 			float yPosition = (gameWindow->getSize().y - textBounds.height) / 2;
 
-			waveText->SetTextPosition(sf::Vector2f(xPosition, yPosition));
+			return sf::Vector2f(xPosition, yPosition);
 		}
 	}
 }

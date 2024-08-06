@@ -66,25 +66,25 @@ namespace UI
 
 		void GameplayUIController::InitializeEnemiesKilledText()
 		{
-			enemiesKilledText->Initialize("Enemies Killed : 0", sf::Vector2f(enemiesKilledTextXPosition, textYPosition),
+			enemiesKilledText->Initialize("Enemies Killed : 0", sf::Vector2f(enemiesKilledTextXPosition, enemiesKilledTextYPosition),
 				FontType::BUBBLE_BOBBLE, fontSize, textColor);
 		}
 
 		void GameplayUIController::InitializePlayerAmmo()
 		{
-			playerAmmo->Initialize("Player Ammo : 0", sf::Vector2f(playerAmmoTextXPosition, textYPosition),
+			playerAmmo->Initialize("Ammo : 0", sf::Vector2f(playerAmmoTextXPosition, playerAmmoTextYPosition),
 				FontType::BUBBLE_BOBBLE, fontSize, textColor);
 		}
 
 		void GameplayUIController::InitializePlayerLive()
 		{
-			playerLive->Initialize("Player Health : 0", sf::Vector2f(playerLiveTextXposition, 1000.f),
+			playerLive->Initialize("Health : 0", sf::Vector2f(playerLiveTextXposition, playerLiveTextYposition),
 				FontType::BUBBLE_BOBBLE, fontSize, textColor);
 		}
 
 		void GameplayUIController::InitializePlayerScore()
 		{
-			playerScore->Initialize("Player Score : 0", sf::Vector2f(textXPosition, playerScoreTextYPosition),
+			playerScore->Initialize("Score : 0", sf::Vector2f(playerScoreTextXPosition, playerScoreTextYPosition),
 				FontType::BUBBLE_BOBBLE, fontSize, textColor);
 		}
 
@@ -96,20 +96,20 @@ namespace UI
 
 		void GameplayUIController::UpdatePlayerAmmoText()
 		{
-			sf::String enemiesKilledString = "Player Ammo :" + std::to_string(PlayerModel::playerAmmo);
+			sf::String enemiesKilledString = "Ammo :" + std::to_string(PlayerModel::playerAmmo);
 			playerAmmo->setText(enemiesKilledString);
 		}
 
 		void GameplayUIController::UpdatePlayerScore()
 		{
 			int score = ServiceLocator::GetInstance()->GetPlayerService()->GetPlayerScore();
-			sf::String enemiesKilledString = "Player Score : " + std::to_string(score);
+			sf::String enemiesKilledString = "Score : " + std::to_string(score);
 			playerScore->setText(enemiesKilledString);
 		}
 
 		void GameplayUIController::UpdatePlayerLive()
 		{
-			sf::String enemiesKilledString = "Player Health : " + std::to_string(PlayerModel::playerLives);
+			sf::String enemiesKilledString = "Health : " + std::to_string(PlayerModel::playerLives);
 			playerLive->setText(enemiesKilledString);
 		}
 

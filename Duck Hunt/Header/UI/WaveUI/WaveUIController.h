@@ -33,7 +33,7 @@ namespace UI
 			sf::String CurrentWaveText();
 
 			void Show() override;
-			void setTextcentreAligned();
+			sf::Vector2f GetTextcentreAligned();
 
 		};
 	}
