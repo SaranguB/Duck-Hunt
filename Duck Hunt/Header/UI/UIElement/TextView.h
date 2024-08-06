@@ -25,7 +25,6 @@ namespace UI
 
 			void SetFont(FontType fontType);
 			void SetFontSize(int fontSize);
-			void SetTextPosition(sf::Vector2f position);
 			void SetTextColor(sf::Color color);
 
 
@@ -39,10 +38,12 @@ namespace UI
 				FontType fontType = FontType::BUBBLE_BOBBLE, int fontSize = defualtFontSize,
 				sf::Color color = sf::Color::White);
 		
+			void SetTextPosition(sf::Vector2f position);
+
 			void Render();
 
 			void setText(sf::String textValue);
-			void setTextcentreAligned();
+			sf::FloatRect GetLocalBounds();
 		};
 	}
 }

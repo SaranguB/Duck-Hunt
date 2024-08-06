@@ -19,13 +19,14 @@ namespace Wave
 	private:
 		int waveTimer = 7;
 		sf::Clock clock;
+		sf::Clock waveClock;
 
 	public:
 		WaveService();
 		~WaveService();
 
 		void Initialize();
-	
+		void Update();
 
 		void ResetTime();
 
@@ -46,5 +47,6 @@ namespace Wave
 		WaveType GetCurrentWave();
 		void SetCurrentWave(WaveType wave);
 		void RestartClock();
+		void WaveStateChange();
 	};
 }

@@ -46,7 +46,7 @@ namespace Enemy
 
 		enemyList.push_back(enemyController);
 		EnemyModel::enemyCount++;
-		ServiceLocator::GetInstance()->GetGraphicService()->ChangeWindowColor(sf::Color::Cyan);
+		
 
 
 	}

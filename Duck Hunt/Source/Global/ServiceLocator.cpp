@@ -74,6 +74,7 @@ namespace Global
 	{
 		eventService->Update();
 		timeService->Update();
+		waveService->Update();
 		if (GameService::GetGameState() == GameState::GAMEPLAY)
 		{
 
@@ -90,8 +91,9 @@ namespace Global
 		if (GameService::GetGameState() == GameState::GAMEPLAY)
 		{
 			enemyService->Render();
-			gameplayService->Render();
 		}
+		gameplayService->Render();
+
 		uiService->Render();
 
 

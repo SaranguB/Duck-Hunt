@@ -1,6 +1,7 @@
 #pragma once
 #include "../../Header/UI/Interface/IUIcontroller.h"
 #include "../../Header/UI/GameplayUI/GameplayUIController.h"
+#include "../../Header/UI/WaveUI/WaveUIController.h"
 
 
 namespace UI
@@ -9,6 +10,7 @@ namespace UI
 	{
 	private:
 		GameplayUI::GameplayUIController* gameplayUIController;
+		WaveUI::WaveUIController* waveUIController;
 
 
 		void CreateController();

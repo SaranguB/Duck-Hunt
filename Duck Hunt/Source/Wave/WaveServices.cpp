@@ -3,12 +3,14 @@
 #include "../../Header/Global/ServiceLocator.h"
 #include "../../Header/Player/PlayerModel.h"
 #include "../../Header/Enemy/EnemyModel.h"
+#include "../../Header/Main/GameService.h"
 #include <iostream>
 
 namespace Wave
 {
 	using namespace Player;
 	using namespace Global;
+	using namespace Main;
 
 	WaveService::WaveService() = default;
 	
@@ -20,8 +22,13 @@ namespace Wave
 	{
 		currentWave = WaveType::FIRSTWAVE;
 		EnemiesToBeKilled = 2;
+		waveClock.restart();
 	}
 
+	void WaveService::Update()
+	{
+		WaveStateChange();
+	}
 
 	void WaveService::ResetTime()
 	{
@@ -38,11 +45,12 @@ namespace Wave
 
 	void WaveService::SetCurrentWave(WaveType wave)
 	{
-
+		GameService::SetGameState(GameState::WAVE);
 		switch (wave)
 		{
 
 		case WaveType::FIRSTWAVE:
+			
 			RestartClock();
 			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
 			currentWave = WaveType::FIRSTWAVE;
@@ -100,6 +108,22 @@ namespace Wave
 	{
 		clock.restart();
 
+	}
+
+	void WaveService::WaveStateChange()
+	{
+		if (GameService::GetGameState() == GameState::WAVE)
+		{
+			if (waveClock.getElapsedTime().asSeconds() >= 2)
+			{
+				GameService::SetGameState(GameState::GAMEPLAY);
+				waveClock.restart();
+			}
+		}
+		else
+		{
+			waveClock.restart();
+		}
 	}
 
 
