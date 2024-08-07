@@ -58,11 +58,7 @@ namespace UI
 			playerLive->Render();
 		}
 
-		void GameplayUIController::Show()
-		{
-
-		}
-
+		
 
 		void GameplayUIController::InitializeEnemiesKilledText()
 		{

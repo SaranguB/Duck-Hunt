@@ -14,7 +14,6 @@ namespace Enemy
 		DIAGONAL_RIGHT_DOWN,
 	};
 
-
 	enum class EnemyType
 	{
 		GREEN_DUCK,

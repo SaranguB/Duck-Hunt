@@ -49,8 +49,6 @@ namespace Enemy
 		enemyList.push_back(enemyController);
 		EnemyModel::enemyCount++;
 		
-
-
 	}
 
 	EnemyController* EnemyService::CreateEnemy(EnemyType enemyType)
@@ -84,7 +82,10 @@ namespace Enemy
 			enemyList[i]->Update();
 
 			if (enemyList[i]->CurrentEnemyState == EnemyState::DEAD)
+			{
 				DestroyEnemy(enemyList[i]);
+				ServiceLocator::GetInstance()->GetSoundService()->PlaySound(Sound::SoundType::DUCK_SOUND);
+			}
 
 		}
 		DestroyFlaggedEnemyList();
@@ -120,7 +121,6 @@ namespace Enemy
 
 			if (EnemyModel::enemyCount < EnemyModel::NumberOfEnemies)
 			{
-				
 				SpawnEnemy();
 				spawnTimer = 0;
 			}
@@ -147,8 +147,6 @@ namespace Enemy
 			if (bounds.contains(mousePosition))
 			{
 
-				ServiceLocator::GetInstance()->GetSoundService()->PlaySound(Sound::SoundType::DUCK_SOUND);
-
 				Enemy::EnemyModel::enemiesKilled++;
 
 				IncreaseScore(enemyList[i]);
@@ -166,11 +164,6 @@ namespace Enemy
 	{
 		flaggedEnemyList.push_back(controller);
 		enemyList.erase(std::remove(enemyList.begin(), enemyList.end(), controller), enemyList.end());
-	}
-
-	void EnemyService::KillEnemy(EnemyController* controller)
-	{
-
 	}
 
 	void EnemyService::Reset()

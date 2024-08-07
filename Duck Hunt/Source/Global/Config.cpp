@@ -17,6 +17,8 @@ namespace Global
 	 const sf::String Config::Duck_sound_path = "source/assets/sounds/Duck_Sound.wav";
 	 const sf::String Config::Winning_path = "source/assets/sounds/Winning_Sound.wav";
 	 const sf::String Config::Failing_path = "source/assets/sounds/Failing_Sound.wav";
+	 const sf::String Config::Shooting_path = "source/assets/sounds/Shooting.mp3";
+	 const sf::String Config::Empty_path = "source/assets/sounds/Empty_shooting.mp3";
 	 
 	 
 }

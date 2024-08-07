@@ -15,8 +15,6 @@ namespace UI
 			float imageWidth;
 			float imagwHeight;
 
-			
-
 		public:
 			ImageView();
 			~ImageView();

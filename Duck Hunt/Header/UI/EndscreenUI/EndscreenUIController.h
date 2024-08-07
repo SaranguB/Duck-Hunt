@@ -22,7 +22,6 @@ namespace UI
 			void Initialize() override;
 			void Update() override;
 			void Render() override;
-			void Show() override;
 
 			void InitializeImage();
 

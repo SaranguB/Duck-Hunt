@@ -29,20 +29,14 @@ namespace Wave
 		void Update();
 
 		void ResetTime();
-
 		bool checkTimeForChange();
-
 
 		int speed;
 		int ammo;
 		int EnemiesToBeKilled;
 
-	
-
 		WaveType currentWave;
 		int GetEnemiesToBeKilled();
-
-
 
 		WaveType GetCurrentWave();
 		void SetCurrentWave(WaveType wave);

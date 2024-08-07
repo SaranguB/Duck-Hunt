@@ -29,8 +29,6 @@ namespace Main
 		void Ignite();
 
 		void Initialize();
-
-
 		void Update();
 		void Render();
 		bool IsRunning();

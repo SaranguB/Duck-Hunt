@@ -11,7 +11,6 @@ namespace Gameplay
 	private:
 		GameplayController* gameplayController;
 
-
 	public:
 		GameplayService();
 		~GameplayService();
@@ -20,6 +19,6 @@ namespace Gameplay
 		void Update();
 		void Render();
 
-		
+		void ResetGame();
 	};
 }

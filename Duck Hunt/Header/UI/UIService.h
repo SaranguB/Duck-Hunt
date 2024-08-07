@@ -13,7 +13,6 @@ namespace UI
 		WaveUI::WaveUIController* waveUIController;
 		EndscreenUI::EndscreenUIController* endscreenUIController;
 
-
 		void CreateController();
 		void InitializeController();
 
@@ -27,7 +26,5 @@ namespace UI
 		void Initialize();
 		void update();
 		void Render();
-		
-	
 	};
 }

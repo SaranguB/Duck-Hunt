@@ -60,14 +60,6 @@ namespace UI
 			waveText->SetTextPosition(GetTextcentreAligned());
 		}
 
-		sf::String WaveUIController::CurrentWaveText()
-		{
-			return sf::String();
-		}
-
-		void WaveUIController::Show()
-		{
-		}
 		sf::Vector2f WaveUIController::GetTextcentreAligned()
 		{
 			gameWindow = ServiceLocator::GetInstance()->GetGraphicService()->GetGameWIndow();

@@ -18,7 +18,6 @@ namespace Enemy
 
 		void Initialize();
 
-
 		sf::Vector2f GetEnemyPosition();
 		void SetEnemyPosition(sf::Vector2f position);
 
@@ -33,7 +32,6 @@ namespace Enemy
 		static int NumberOfEnemies;
 		static int enemiesKilled;
 		static int enemyCount;
-
 
 
 	};

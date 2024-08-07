@@ -32,7 +32,6 @@ namespace UI
 			void DisplayWaveText();
 			sf::String CurrentWaveText();
 
-			void Show() override;
 			sf::Vector2f GetTextcentreAligned();
 
 		};

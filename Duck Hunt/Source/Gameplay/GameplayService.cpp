@@ -35,4 +35,13 @@ namespace Gameplay
 		gameplayController->Render();
 	}
 
+	void GameplayService::ResetGame()
+	{
+		ServiceLocator::GetInstance()->GetEnemyService()->Reset();
+		ServiceLocator::GetInstance()->GetPlayerService()->ResetGame();
+		GameService::SetGameState(GameState::GAMEPLAY);
+		ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(Wave::WaveType::FIRSTWAVE);
+
+	}
+
 }

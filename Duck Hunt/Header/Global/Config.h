@@ -22,6 +22,8 @@ namespace Global
 		static const sf::String music_path;
 		static const sf::String Winning_path;
 		static const sf::String Failing_path;
+		static const sf::String Shooting_path;
+		static const sf::String Empty_path;
 
 	};
 }

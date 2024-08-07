@@ -39,9 +39,6 @@ namespace Enemy
 		sf::Sprite& GetEnemySprite();
 		EnemyType GetEnemyType();
 
-		void MoveRight(int verticalSpeed, sf::Vector2f position);
-		
-
 		void MoveInDirection(MovementDirection direction, float speed);
 		
 		EnemyState GetCurrentEnemyState();
@@ -50,6 +47,5 @@ namespace Enemy
 		
 		float deadSpeed = 1000.f;
 
-		
 	};
 }

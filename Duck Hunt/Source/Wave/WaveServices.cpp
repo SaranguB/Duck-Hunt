@@ -4,6 +4,7 @@
 #include "../../Header/Player/PlayerModel.h"
 #include "../../Header/Enemy/EnemyModel.h"
 #include "../../Header/Main/GameService.h"
+#include "../../Header/Gameplay/GameplayService.h"
 #include <iostream>
 
 namespace Wave
@@ -45,7 +46,7 @@ namespace Wave
 
 	void WaveService::SetCurrentWave(WaveType wave)
 	{
-		PlayerStatus currentStatus = ServiceLocator::GetInstance()->GetPlayerService()->GetCurrentStatus();
+		
 
 		GameService::SetGameState(GameState::WAVE);
 		switch (wave)
@@ -57,7 +58,7 @@ namespace Wave
 			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
 			currentWave = WaveType::FIRSTWAVE;
 
-			waveTimer = 7;
+			waveTimer = 10;
 			Player::PlayerModel::playerAmmo = 5;
 			Enemy::EnemyModel::NumberOfEnemies = 4;
 			EnemiesToBeKilled = 3;
@@ -145,13 +146,11 @@ namespace Wave
 		{
 			if (waveClock.getElapsedTime().asSeconds() >= 5)
 			{
-				printf("yes");
+				
 				RestartClock();
-				ServiceLocator::GetInstance()->GetEnemyService()->Reset();
-				ServiceLocator::GetInstance()->GetPlayerService()->ResetGame();
-				GameService::SetGameState(GameState::GAMEPLAY);
-				currentWave = WaveType::FIRSTWAVE;
+				ServiceLocator::GetInstance()->GetGameplayService()->ResetGame();
 				waveClock.restart();
+			
 
 			}
 			

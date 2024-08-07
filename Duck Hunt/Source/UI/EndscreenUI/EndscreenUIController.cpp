@@ -52,16 +52,12 @@ namespace UI
 			}
 		}
 
-		void EndscreenUIController::Show()
-		{
-		}
+		
 
 		void EndscreenUIController::InitializeImage()
 		{
 			sf::RenderWindow* gameWindow = ServiceLocator::GetInstance()->GetGraphicService()->GetGameWIndow();
 			
-		
-				printf("hi\n");
 				finalImageWon->Initialize(Config::You_Won,
 					gameWindow->getSize().x, gameWindow->getSize().y, sf::Vector2f(0, 0));
 			

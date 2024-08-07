@@ -32,7 +32,6 @@ namespace Global
 		void CreateServices();
 		void ClearAllServices();
 
-
 	public:
 
 		static ServiceLocator* GetInstance();

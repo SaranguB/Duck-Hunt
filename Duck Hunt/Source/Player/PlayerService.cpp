@@ -113,8 +113,6 @@ namespace Player
 				ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(WaveType::FINISHED);
 				break;
 			}
-
-			//printf("Failed Third wave\n");
 			ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(currentWave);
 			currentStatus = PlayerStatus::STATIC;
 
