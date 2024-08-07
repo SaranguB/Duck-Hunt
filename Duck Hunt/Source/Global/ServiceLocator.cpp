@@ -1,4 +1,5 @@
 #include "../../Header/Global/ServiceLocator.h"
+#include "../../Header/Main/GameService.h"
 
 namespace Global
 {
@@ -10,6 +11,8 @@ namespace Global
 	using namespace Player;
 	using namespace Wave;
 	using namespace Sound;
+	using namespace UI;
+	using namespace Main;
 
 	ServiceLocator::ServiceLocator()
 	{
@@ -20,7 +23,7 @@ namespace Global
 	{
 		ClearAllServices();
 	}
-	
+
 	void ServiceLocator::CreateServices()
 	{
 		graphicService = new GraphicService();
@@ -31,6 +34,7 @@ namespace Global
 		timeService = new TimeService();
 		playerService = new PlayerService();
 		soundService = new SoundService();
+		uiService = new UIService();
 
 	}
 
@@ -44,6 +48,7 @@ namespace Global
 		delete(playerService);
 		delete(waveService);
 		delete(soundService);
+		delete(uiService);
 
 	}
 
@@ -58,25 +63,40 @@ namespace Global
 		graphicService->Initialize();
 		eventService->Initialize();
 		timeService->Initialize();
+		uiService->Initialize();
+		gameplayService->Initialize();
 		soundService->Initialize();
 		waveService->Initialize();
 		enemyService->Initialize();
-		gameplayService->Initialize();
 		playerService->Initialize();
 	}
 	void ServiceLocator::Update()
 	{
 		eventService->Update();
 		timeService->Update();
-		enemyService->Update();
-		gameplayService->Update();
-		playerService->Update();
+		waveService->Update();
+		if (GameService::GetGameState() == GameState::GAMEPLAY)
+		{
+
+			enemyService->Update();
+			gameplayService->Update();
+			playerService->Update();
+		}
+		uiService->update();
+
 
 	}
 	void ServiceLocator::Render()
 	{
-		enemyService->Render();
+		if (GameService::GetGameState() == GameState::GAMEPLAY)
+		{
+			enemyService->Render();
+		}
 		gameplayService->Render();
+
+		uiService->Render();
+
+
 
 	}
 	Graphics::GraphicService* ServiceLocator::GetGraphicService()
@@ -111,5 +131,9 @@ namespace Global
 	Sound::SoundService* ServiceLocator::GetSoundService()
 	{
 		return soundService;
+	}
+	UI::UIService* ServiceLocator::GetUIService()
+	{
+		return uiService;
 	}
 }

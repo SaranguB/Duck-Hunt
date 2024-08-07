@@ -2,6 +2,7 @@
 
 namespace Gameplay
 {
+
 	class GameplayController;
 
 	class GameplayService
@@ -18,5 +19,6 @@ namespace Gameplay
 		void Update();
 		void Render();
 
+		void ResetGame();
 	};
 }

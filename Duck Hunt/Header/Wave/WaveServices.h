@@ -19,32 +19,28 @@ namespace Wave
 	private:
 		int waveTimer = 7;
 		sf::Clock clock;
+		sf::Clock waveClock;
 
 	public:
 		WaveService();
 		~WaveService();
 
 		void Initialize();
-	
+		void Update();
 
 		void ResetTime();
-
 		bool checkTimeForChange();
-
 
 		int speed;
 		int ammo;
 		int EnemiesToBeKilled;
 
-	
-
 		WaveType currentWave;
 		int GetEnemiesToBeKilled();
-
-
 
 		WaveType GetCurrentWave();
 		void SetCurrentWave(WaveType wave);
 		void RestartClock();
+		void WaveStateChange();
 	};
 }

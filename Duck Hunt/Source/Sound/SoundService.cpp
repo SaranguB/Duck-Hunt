@@ -34,6 +34,16 @@ namespace Sound
 			printf("Error Loading Sound Effect");
 
 		}
+		if (!bufferShooting.loadFromFile(Config::Shooting_path))
+		{
+			printf("Error Loading Sound Effect");
+
+		}
+		if (!bufferEmpty.loadFromFile(Config::Empty_path))
+		{
+			printf("Error Loading Sound Effect");
+
+		}
 
 	}
 
@@ -58,6 +68,14 @@ namespace Sound
 		case SoundType::WON_SOUND:
 
 			soundEffect.setBuffer(bufferWon);
+			break;
+
+		case SoundType::SHOOT_SOUND:
+			soundEffect.setBuffer(bufferShooting);
+			break;
+
+		case SoundType::EMPTY_SOUND:
+			soundEffect.setBuffer(bufferEmpty);
 			break;
 
 		default:

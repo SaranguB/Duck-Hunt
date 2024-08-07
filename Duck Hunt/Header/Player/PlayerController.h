@@ -24,11 +24,8 @@ namespace Player
 		void Initialize();
 		void Update();
 		
-	
 		void ProcessPlayerInput();
-
 		void DecreasePlayerAmmo();
-
 		void Reset();
 
 		void SetPlayerScore(int score);
@@ -37,9 +34,7 @@ namespace Player
 		void DecreasePlayerLive();
 		void ResetGame();
 		
-
-		
-
+		void PlayBulletSound();
 		
 
 

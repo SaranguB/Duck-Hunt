@@ -8,7 +8,10 @@ namespace Player
 		WON,
 		FAILED,
 		STATIC,
+		GAME_WON,
+		GAME_OVER,
 	};
+
 	class PlayerService
 	{
 	private:
@@ -20,20 +23,19 @@ namespace Player
 
 		void Initialize();
 		void Update();
-		
 		void Reset();
 
 		int GetPlayerScore();
-
 		void IncreasePlayerScore(int score);
-		
+
 		PlayerStatus currentStatus;
 		void SetCurrentStatus(PlayerStatus status);
 		PlayerStatus GetCurrentStatus();
 
 		void CheckForChange();
-
 		void DecreasePlayerLive();
 		void ResetGame();
+
+		
 	};
 }

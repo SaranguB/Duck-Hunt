@@ -23,7 +23,7 @@ namespace Enemy
 
 
 			float verticalSpeed = 1200.f;
-			float HorizontalSpeed = 600.f;
+			float HorizontalSpeed = 800.f;
 			float diagonalLeftSpeed = 700.f;
 			float diagonalRightSpeed = 800.f;
 

@@ -1,12 +1,17 @@
 #pragma once
 #include "../../Header/Gameplay/GameplayService.h"
 #include "../../Header/Gameplay/GameplayController.h"
+#include "../../Header/Main/GameService.h"
+#include "../../Header/Global/ServiceLocator.h"
 
 namespace Gameplay
 {
+	using namespace Main;
+	using namespace Global;
 	GameplayService::GameplayService()
 	{
 		gameplayController = new GameplayController();
+		
 	}
 
 	GameplayService::~GameplayService()
@@ -21,9 +26,22 @@ namespace Gameplay
 	void GameplayService::Update()
 	{
 		gameplayController->Update();
+
+		if(GameService::GetGameState() == GameState::GAMEPLAY)
+		ServiceLocator::GetInstance()->GetGraphicService()->ChangeWindowColor(sf::Color::Cyan);
 	}
 	void GameplayService::Render()
 	{
 		gameplayController->Render();
 	}
+
+	void GameplayService::ResetGame()
+	{
+		ServiceLocator::GetInstance()->GetEnemyService()->Reset();
+		ServiceLocator::GetInstance()->GetPlayerService()->ResetGame();
+		GameService::SetGameState(GameState::GAMEPLAY);
+		ServiceLocator::GetInstance()->GetWaveService()->SetCurrentWave(Wave::WaveType::FIRSTWAVE);
+
+	}
+
 }

@@ -130,9 +130,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\UI\EndscreenUI\EndscreenUIController.cpp" />
+    <ClCompile Include="Source\UI\GameplayerUI\GameplayUIController.cpp" />
+    <ClCompile Include="Source\UI\UIElement\UIView.cpp" />
+    <ClCompile Include="Source\UI\UIService.cpp" />
     <ClCompile Include="Source\Enemy\Controller\RedDuckController.cpp" />
     <ClCompile Include="Source\Sound\SoundService.cpp" />
     <ClCompile Include="Source\UI\UIElement\TextView.cpp" />
+    <ClCompile Include="Source\UI\WaveUI\WaveUIController.cpp" />
     <ClCompile Include="Source\Wave\WaveServices.cpp" />
     <ClCompile Include="Source\Enemy\Controller\GreenDuckController.cpp" />
     <ClCompile Include="Source\Enemy\EnemyService.cpp" />
@@ -175,9 +180,15 @@
     <ClInclude Include="Header\Player\PlayerService.h" />
     <ClInclude Include="Header\Sound\SoundService.h" />
     <ClInclude Include="Header\Time\TimeService.h" />
+    <ClInclude Include="Header\UI\EndscreenUI\EndscreenUIController.h" />
+    <ClInclude Include="Header\UI\GameplayUI\GameplayUIController.h" />
+    <ClInclude Include="Header\UI\Interface\IUIController.h" />
     <ClInclude Include="Header\UI\UIElement\ImageView.h" />
     <ClInclude Include="Header\UI\UIElement\TextView.h" />
+    <ClInclude Include="Header\UI\UIElement\UIView.h" />
+    <ClInclude Include="Header\UI\UIService.h" />
     <ClInclude Include="Header\Wave\WaveServices.h" />
+    <ClInclude Include="Header\UI\WaveUI\WaveUIController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

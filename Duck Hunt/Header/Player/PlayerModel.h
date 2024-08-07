@@ -17,8 +17,6 @@ namespace Player
 		void Initialize();
 		
 		int GetPlayerAmmo();
-	
-		
 		static int playerAmmo;
 		
 		int GetPlayerScore();

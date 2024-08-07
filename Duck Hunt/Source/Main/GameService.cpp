@@ -4,8 +4,7 @@
 namespace Main
 {
 	using namespace Global;
-
-
+	GameState GameService::currentState = GameState::BOOT;
 
 	GameService::GameService()
 	{
@@ -25,6 +24,7 @@ namespace Main
 	{
 		serviceLocator->Initialize();
 		InitializeVariable();
+		SetGameState(GameState::GAMEPLAY);
 	}
 
 	void GameService::InitializeVariable()
@@ -46,5 +46,14 @@ namespace Main
 	bool GameService::IsRunning()
 	{
 		return serviceLocator->GetGraphicService()->IsGameWindowOpen();
+	}
+
+	void GameService::SetGameState(GameState newState)
+	{
+		currentState = newState;
+	}
+	GameState GameService::GetGameState()
+	{
+		return currentState;
 	}
 }

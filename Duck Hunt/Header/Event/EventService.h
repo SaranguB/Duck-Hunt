@@ -29,7 +29,6 @@ namespace Event
 
 		void UpdateMouseButtonState(ButtonState& currentButtonState, sf::Mouse::Button mouseButton);
 
-
 	public:
 		EventService();
 		~EventService();

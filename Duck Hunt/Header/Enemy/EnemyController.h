@@ -5,8 +5,11 @@
 
 namespace Enemy
 {
+
 	class EnemyView;
 	class EnemyModel;
+
+	enum class EnemyState;
 	enum class EnemyType;
 
 	enum class MovementDirection;
@@ -19,7 +22,6 @@ namespace Enemy
 		void HandleOutOfBounds();
 		MovementDirection currentDirection;
 		sf::Clock directionChangeClock;
-
 
 	public:
 		EnemyController(EnemyType type);
@@ -37,9 +39,13 @@ namespace Enemy
 		sf::Sprite& GetEnemySprite();
 		EnemyType GetEnemyType();
 
-		void MoveRight(int verticalSpeed, sf::Vector2f position);
-		
-
 		void MoveInDirection(MovementDirection direction, float speed);
+		
+		EnemyState GetCurrentEnemyState();
+		EnemyState CurrentEnemyState;
+		void SetEnemyState(EnemyState state);
+		
+		float deadSpeed = 1000.f;
+
 	};
 }

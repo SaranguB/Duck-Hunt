@@ -42,8 +42,11 @@ namespace UI
 			text.setString(textValue);
 		}
 
-		void TextView::setTextcentreAligned()
+		sf::FloatRect TextView::GetLocalBounds()
 		{
+
+			return text.getLocalBounds();
+
 			float xPosition = (gameWindow->getSize().x - text.getLocalBounds().width) / 2;
 			float yPosition = text.getGlobalBounds().getPosition().y;
 

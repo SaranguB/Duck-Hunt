@@ -30,8 +30,9 @@ namespace Player
 		}
 
 
-		if (PlayerModel::playerAmmo > 0)
-			ProcessPlayerInput();
+
+		ProcessPlayerInput();
+
 
 	}
 
@@ -44,13 +45,19 @@ namespace Player
 		{
 			/*printf("Mouse click detected.\n");*/
 
-			DecreasePlayerAmmo();
-			sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(*gameWindow));
+			PlayBulletSound();
 
-			//printf("Mouse Position: %f, %f\n", mousePosition.x, mousePosition.y);
+			if (PlayerModel::playerAmmo > 0)
+			{
+				DecreasePlayerAmmo();
 
-			bool destroyed = false;
-			destroyed = ServiceLocator::GetInstance()->GetEnemyService()->DestroyEnemyAtMousePosition(mousePosition);
+				sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(*gameWindow));
+
+				//printf("Mouse Position: %f, %f\n", mousePosition.x, mousePosition.y);
+
+				bool destroyed = false;
+				destroyed = ServiceLocator::GetInstance()->GetEnemyService()->DestroyEnemyAtMousePosition(mousePosition);
+			}
 
 			/*if (destroyed)
 			{
@@ -97,6 +104,16 @@ namespace Player
 		PlayerModel::playerLives = 3;
 		PlayerModel::playerAmmo = 5;
 		playerModel->SetPlayeScore(0);
+	}
+
+	void PlayerController::PlayBulletSound()
+	{
+		if (PlayerModel::playerAmmo > 0)
+			ServiceLocator::GetInstance()->GetSoundService()->PlaySound(Sound::SoundType::SHOOT_SOUND);
+
+		if (PlayerModel::playerAmmo <= 0)
+			ServiceLocator::GetInstance()->GetSoundService()->PlaySound(Sound::SoundType::EMPTY_SOUND);
+
 	}
 
 

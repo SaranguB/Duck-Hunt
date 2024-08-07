@@ -1,5 +1,6 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include "../../Header/UI/UIElement/UIView.h"
+
 
 namespace UI
 {
@@ -7,14 +8,12 @@ namespace UI
 	{
 		enum class FontType
 		{
-
 			BUBBLE_BOBBLE,
 			DS_DIGIB,
 		};
-		class TextView
+		class TextView : public UIView
 		{
-		private:
-			sf::RenderWindow* gameWindow;
+		private:	
 			static const int defualtFontSize = 55;
 
 			static sf::Font fontBubbleBobble;
@@ -26,7 +25,6 @@ namespace UI
 
 			void SetFont(FontType fontType);
 			void SetFontSize(int fontSize);
-			void SetTextPosition(sf::Vector2f position);
 			void SetTextColor(sf::Color color);
 
 
@@ -34,16 +32,16 @@ namespace UI
 			TextView();
 			~TextView();
 
-			
-
 			void Initialize(sf::String textValue, sf::Vector2f position,
 				FontType fontType = FontType::BUBBLE_BOBBLE, int fontSize = defualtFontSize,
 				sf::Color color = sf::Color::White);
 		
+			void SetTextPosition(sf::Vector2f position);
+
 			void Render();
 
 			void setText(sf::String textValue);
-			void setTextcentreAligned();
+			sf::FloatRect GetLocalBounds();
 		};
 	}
 }

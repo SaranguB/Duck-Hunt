@@ -21,7 +21,6 @@ namespace Graphics
 		void SetVideoMod();
 		void OnDestroy();
 
-
 	public:
 
 		GraphicService();
@@ -29,7 +28,6 @@ namespace Graphics
 
 		void Initialize();
 	
-
 		bool IsGameWindowOpen();
 
 		sf::RenderWindow* CreateGameWindow();

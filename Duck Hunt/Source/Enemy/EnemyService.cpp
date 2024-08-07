@@ -18,6 +18,8 @@ namespace Enemy
 
 	EnemyService::EnemyService()
 	{
+		std::srand(static_cast<unsigned int>(std::time(nullptr)));
+
 		wave = new WaveService();
 		for (int i = 0;i < enemyList.size();i++)
 		{
@@ -46,9 +48,7 @@ namespace Enemy
 
 		enemyList.push_back(enemyController);
 		EnemyModel::enemyCount++;
-		ServiceLocator::GetInstance()->GetGraphicService()->ChangeWindowColor(sf::Color::Cyan);
-
-
+		
 	}
 
 	EnemyController* EnemyService::CreateEnemy(EnemyType enemyType)
@@ -81,6 +81,12 @@ namespace Enemy
 		{
 			enemyList[i]->Update();
 
+			if (enemyList[i]->CurrentEnemyState == EnemyState::DEAD)
+			{
+				DestroyEnemy(enemyList[i]);
+				ServiceLocator::GetInstance()->GetSoundService()->PlaySound(Sound::SoundType::DUCK_SOUND);
+			}
+
 		}
 		DestroyFlaggedEnemyList();
 	}
@@ -103,9 +109,11 @@ namespace Enemy
 					Reset();
 					spawnTimer = 0;
 				}
-				else
+				else if (EnemyModel::enemiesKilled >= ServiceLocator::GetInstance()->GetWaveService()->GetEnemiesToBeKilled())
 				{
+					
 					ServiceLocator::GetInstance()->GetPlayerService()->SetCurrentStatus(Player::PlayerStatus::WON);
+					Reset();
 
 				}
 
@@ -113,7 +121,6 @@ namespace Enemy
 
 			if (EnemyModel::enemyCount < EnemyModel::NumberOfEnemies)
 			{
-				
 				SpawnEnemy();
 				spawnTimer = 0;
 			}
@@ -140,12 +147,10 @@ namespace Enemy
 			if (bounds.contains(mousePosition))
 			{
 
-				ServiceLocator::GetInstance()->GetSoundService()->PlaySound(Sound::SoundType::DUCK_SOUND);
-
 				Enemy::EnemyModel::enemiesKilled++;
 
 				IncreaseScore(enemyList[i]);
-				DestroyEnemy(enemyList[i]);
+				enemyList[i]->SetEnemyState(EnemyState::FALLING);
 
 				return true;
 				break;
@@ -160,7 +165,6 @@ namespace Enemy
 		flaggedEnemyList.push_back(controller);
 		enemyList.erase(std::remove(enemyList.begin(), enemyList.end(), controller), enemyList.end());
 	}
-
 
 	void EnemyService::Reset()
 	{
