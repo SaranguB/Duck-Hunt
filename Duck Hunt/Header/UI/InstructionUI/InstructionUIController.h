@@ -29,8 +29,6 @@ namespace UI
 
     Objective: Shoot a set number of ducks within a time limit to advance through waves.
 
-    Gameplay:
-
     Controls: Use the mouse to aim and left-click to shoot. Watch your ammo. running out ends the wave.
 
     Waves: Complete each wave by shooting the required number of ducks before time runs out or ammo is
