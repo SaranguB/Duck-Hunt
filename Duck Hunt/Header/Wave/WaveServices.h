@@ -42,6 +42,6 @@ namespace Wave
 		void SetCurrentWave(WaveType wave);
 		void RestartClock();
 		void WaveStateChange();
-		void RestartWaveTimerClock();
+
 	};
 }

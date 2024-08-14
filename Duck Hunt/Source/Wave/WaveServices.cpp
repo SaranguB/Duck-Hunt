@@ -70,10 +70,10 @@ namespace Wave
 			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
 			currentWave = WaveType::SECONDWAVE;
 
-			waveTimer = 10;
+			waveTimer = 20;
 			Player::PlayerModel::playerAmmo = 10;
-			Enemy::EnemyModel::NumberOfEnemies = 8;
-			EnemiesToBeKilled = 2;
+			Enemy::EnemyModel::NumberOfEnemies = 10;
+			EnemiesToBeKilled = 8;
 			ServiceLocator::GetInstance()->GetPlayerService()->SetCurrentStatus(PlayerStatus::STATIC);
 
 			break;
@@ -83,10 +83,10 @@ namespace Wave
 			ServiceLocator::GetInstance()->GetEnemyService()->Reset();
 			currentWave = WaveType::THIRDWAVE;
 
-			waveTimer = 10;
-			Player::PlayerModel::playerAmmo = 17;
-			Enemy::EnemyModel::NumberOfEnemies = 12;
-			EnemiesToBeKilled = 2;
+			waveTimer = 30;
+			Player::PlayerModel::playerAmmo = 20;
+			Enemy::EnemyModel::NumberOfEnemies = 16;
+			EnemiesToBeKilled = 12;
 			ServiceLocator::GetInstance()->GetPlayerService()->SetCurrentStatus(PlayerStatus::STATIC);
 
 			break;
