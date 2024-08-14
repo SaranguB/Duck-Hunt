@@ -11,7 +11,6 @@ namespace Gameplay
 	GameplayService::GameplayService()
 	{
 		gameplayController = new GameplayController();
-		
 	}
 
 	GameplayService::~GameplayService()
@@ -27,8 +26,8 @@ namespace Gameplay
 	{
 		gameplayController->Update();
 
-		if(GameService::GetGameState() == GameState::GAMEPLAY)
-		ServiceLocator::GetInstance()->GetGraphicService()->ChangeWindowColor(sf::Color::Cyan);
+		if (GameService::GetGameState() == GameState::GAMEPLAY)
+			ServiceLocator::GetInstance()->GetGraphicService()->ChangeWindowColor(sf::Color::Cyan);
 	}
 	void GameplayService::Render()
 	{

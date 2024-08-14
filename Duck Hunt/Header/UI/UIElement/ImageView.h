@@ -7,7 +7,7 @@ namespace UI
 	{
 		class ImageView : public UIView
 		{
-		private:
+		protected:
 
 			sf::Texture imageTexture;
 			sf::Sprite imageSprite;
@@ -20,7 +20,7 @@ namespace UI
 			~ImageView();
 
 			void Initialize(sf::String texturePath, float imageWidth, float imageHeight, sf::Vector2f position);
-			
+
 			void Render();
 
 			void SetTexture(sf::String texturePath);
@@ -28,6 +28,8 @@ namespace UI
 			void SetPosition(sf::Vector2f position);
 
 			sf::Sprite& GetImageSprite();
+
+			void SetCentreAligned();
 		};
 	}
 }

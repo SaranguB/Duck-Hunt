@@ -6,9 +6,11 @@ namespace Main
 	enum GameState
 	{
 		BOOT,
+		MAINMENU,
 		WAVE,
 		GAMEPLAY,
 		CREDITS,
+		INSTRUCTION,
 
 	};
 

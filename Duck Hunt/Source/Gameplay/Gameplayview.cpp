@@ -3,6 +3,8 @@
 #include "../../Header/Global/Config.h"
 #include "../../Header/Enemy/EnemyModel.h"
 #include "../../Header/Player/PlayerModel.h"
+#include "../../Header/Main/GameService.h"
+#include "../../Header/Global/ServiceLocator.h"
 
 namespace Gameplay
 {
@@ -10,17 +12,19 @@ namespace Gameplay
 	using namespace Global;
 	using namespace Player;
 	using namespace Enemy;
+	using namespace Main;
+	using namespace Global;
 
 	GameplayView::GameplayView()
 	{
 		gameplayImage = new ImageView();
-		
+
 	}
 
 	GameplayView::~GameplayView()
 	{
 		delete(gameplayImage);
-		
+
 	}
 
 	void GameplayView::Initialize()
@@ -32,21 +36,23 @@ namespace Gameplay
 	void GameplayView::Update()
 	{
 		gameplayImage->Update();
-		
+
 	}
 	void GameplayView::Render()
 	{
-		gameplayImage->Render();
-		
+		if (GameService::GetGameState() == GameState::GAMEPLAY || GameService::GetGameState() == GameState::WAVE)
+			gameplayImage->Render();
+
 	}
 
 	void GameplayView::InitializeBackgroundImage()
 	{
 		gameWindow = ServiceLocator::GetInstance()->GetGraphicService()->GetGameWIndow();
+
 		gameplayImage->Initialize(Config::Duck_Hunt_BG_Texture_Path,
 			gameWindow->getSize().x, gameWindow->getSize().y, sf::Vector2f(0, 0));
 	}
 
-	
+
 
 }

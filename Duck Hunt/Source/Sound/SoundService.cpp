@@ -44,6 +44,11 @@ namespace Sound
 			printf("Error Loading Sound Effect");
 
 		}
+		if (!bufferButton.loadFromFile(Config::button_click_sound_path))
+		{
+			printf("Error Loading Sound Effect");
+
+		}
 
 	}
 
@@ -76,6 +81,10 @@ namespace Sound
 
 		case SoundType::EMPTY_SOUND:
 			soundEffect.setBuffer(bufferEmpty);
+			break;
+
+		case SoundType::BUTTON_SOUND:
+			soundEffect.setBuffer(bufferButton);
 			break;
 
 		default:

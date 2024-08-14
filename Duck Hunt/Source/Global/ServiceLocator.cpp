@@ -77,10 +77,9 @@ namespace Global
 		waveService->Update();
 		if (GameService::GetGameState() == GameState::GAMEPLAY)
 		{
-
-			enemyService->Update();
 			gameplayService->Update();
 			playerService->Update();
+			enemyService->Update();
 		}
 		uiService->update();
 

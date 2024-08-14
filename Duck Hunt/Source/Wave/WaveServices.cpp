@@ -35,7 +35,7 @@ namespace Wave
 	{
 
 		waveTimer = 0;
-		clock.restart();
+		RestartClock();
 
 	}
 
@@ -162,8 +162,5 @@ namespace Wave
 
 		
 	}
-
-
-
 
 }

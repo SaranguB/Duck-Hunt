@@ -3,6 +3,8 @@
 #include "../../Header/UI/GameplayUI/GameplayUIController.h"
 #include "../../Header/UI/WaveUI/WaveUIController.h"
 #include "../../Header/UI/EndscreenUI/EndscreenUIController.h"
+#include "../../Header/UI/MainMenuUI/MainMenuUIController.h"
+#include "../../Header/UI/InstructionUI/InstructionUIController.h"
 
 namespace UI
 {
@@ -12,6 +14,8 @@ namespace UI
 		GameplayUI::GameplayUIController* gameplayUIController;
 		WaveUI::WaveUIController* waveUIController;
 		EndscreenUI::EndscreenUIController* endscreenUIController;
+		MainMenu::MainMenuUIController* mainMenuUIController;
+		InstructionUI::InstructionUIController* instructionUIController;
 
 		void CreateController();
 		void InitializeController();

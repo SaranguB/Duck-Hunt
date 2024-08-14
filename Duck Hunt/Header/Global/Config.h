@@ -24,6 +24,16 @@ namespace Global
 		static const sf::String Failing_path;
 		static const sf::String Shooting_path;
 		static const sf::String Empty_path;
+		static const sf::String button_click_sound_path;
+
+
+		static const sf::String play_button_texture_path;
+		static const sf::String instructions_button_texture_path;
+		static const sf::String quit_button_texture_path;
+		static const sf::String background_texture_Main_path;
+		static const sf::String menu_button_texture_path;
+
+
 
 	};
 }

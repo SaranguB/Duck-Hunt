@@ -132,6 +132,9 @@
   <ItemGroup>
     <ClCompile Include="Source\UI\EndscreenUI\EndscreenUIController.cpp" />
     <ClCompile Include="Source\UI\GameplayerUI\GameplayUIController.cpp" />
+    <ClCompile Include="Source\UI\InstructionUI\InstructionUIController.cpp" />
+    <ClCompile Include="Source\UI\MainMenuUI\MainMenuUIController.cpp" />
+    <ClCompile Include="Source\UI\UIElement\ButtonView.cpp" />
     <ClCompile Include="Source\UI\UIElement\UIView.cpp" />
     <ClCompile Include="Source\UI\UIService.cpp" />
     <ClCompile Include="Source\Enemy\Controller\RedDuckController.cpp" />
@@ -182,7 +185,10 @@
     <ClInclude Include="Header\Time\TimeService.h" />
     <ClInclude Include="Header\UI\EndscreenUI\EndscreenUIController.h" />
     <ClInclude Include="Header\UI\GameplayUI\GameplayUIController.h" />
+    <ClInclude Include="Header\UI\InstructionUI\InstructionUIController.h" />
     <ClInclude Include="Header\UI\Interface\IUIController.h" />
+    <ClInclude Include="Header\UI\MainMenuUI\MainMenuUIController.h" />
+    <ClInclude Include="Header\UI\UIElement\ButtonView.h" />
     <ClInclude Include="Header\UI\UIElement\ImageView.h" />
     <ClInclude Include="Header\UI\UIElement\TextView.h" />
     <ClInclude Include="Header\UI\UIElement\UIView.h" />

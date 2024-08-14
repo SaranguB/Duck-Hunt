@@ -11,6 +11,7 @@ namespace UI
 		using namespace Global;
 		using namespace Wave;
 
+
 		WaveUIController::WaveUIController()
 		{
 			waveText = new TextView();

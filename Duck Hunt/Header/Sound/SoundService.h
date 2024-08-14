@@ -11,6 +11,7 @@ namespace Sound
 		WON_SOUND,
 		SHOOT_SOUND,
 		EMPTY_SOUND,
+		BUTTON_SOUND,
 	};
 
 	class SoundService
@@ -23,8 +24,9 @@ namespace Sound
 		sf::SoundBuffer bufferFailed;
 		sf::SoundBuffer bufferShooting;
 		sf::SoundBuffer bufferEmpty;
+		sf::SoundBuffer bufferButton;
 
-		
+
 		void LoadSoundFromFile();
 
 	public:
